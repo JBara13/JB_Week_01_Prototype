@@ -7,7 +7,7 @@ using TMPro;
 public class Encounter : MonoBehaviour
 {
     public List<NPCBrain> potentialEncounterList;
-    public List<NPCBrain> encounterQueue;
+    public Queue<NPCBrain> encounterQueue;
 
     public NPCBrain currentEncounter;
 
@@ -54,7 +54,7 @@ public class Encounter : MonoBehaviour
                 int rand = Random.Range(0, potentialEncounterList.Count);
                 if (!potentialEncounterList[rand].encounterComplete && !potentialEncounterList[rand].isConsequence)
                 {
-                    encounterQueue.Add(potentialEncounterList[rand]);
+                    //encounterQueue.Add(potentialEncounterList[rand]);
                 }
             }
         }
@@ -62,7 +62,7 @@ public class Encounter : MonoBehaviour
 
     public void EncounterNPC()
     {
-        currentEncounter = encounterQueue[0];
+        //currentEncounter = encounterQueue[0];
 
         // instantiate npc prefab?
 
@@ -130,9 +130,9 @@ public class Encounter : MonoBehaviour
         if (!currentEncounter.isConsequence)
         {
             currentEncounter.isConsequence = true;
-            encounterQueue.Add(currentEncounter);
+            //encounterQueue.Add(currentEncounter);
 
-            encounterQueue.Remove(currentEncounter);
+            //encounterQueue.Remove(currentEncounter);
         }
         else
         {
