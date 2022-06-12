@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: Yes Consequence 1
+  m_Name: Dialogue 4
   m_EditorClassIdentifier: 
-  dialogue: yes consequense
-  yesResponse: 
-  noResponse: 
-  idkResponse: 
-  yesConsequence: {fileID: 0}
-  noConsequence: {fileID: 0}
-  idkConsequence: {fileID: 0}
+  dialogue: Dialogue Text 4
+  yesResponse: yes response
+  noResponse: no response
+  idkResponse: idk response
+  yesConsequence: {fileID: 11400000, guid: 4977e59f6790ade4fb5898e3527138fd, type: 2}
+  noConsequence: {fileID: 11400000, guid: 38d1b423522a2f24f8ce3147901dd9db, type: 2}
+  idkConsequence: {fileID: 11400000, guid: 45a2eacb2ec017b429ea4b50cbdeca65, type: 2}
   hasEncountered: 0
-  isConsequence: 1
+  isConsequence: 0
   isCompleted: 0

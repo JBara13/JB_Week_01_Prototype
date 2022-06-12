@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
   m_Name: No Consequence 1
   m_EditorClassIdentifier: 
-  dialogue: 
+  dialogue: no consequence
   yesResponse: 
   noResponse: 
   idkResponse: 
   yesConsequence: {fileID: 0}
   noConsequence: {fileID: 0}
   idkConsequence: {fileID: 0}
+  hasEncountered: 0
+  isConsequence: 1
+  isCompleted: 0

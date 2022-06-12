@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 using TMPro;
 
 public class Encounter : MonoBehaviour
 {
     public List<NPCBrain> potentialEncounterList;
     public Queue<NPCBrain> encounterQueue;
-
+    private NPCBrain[] queueArray;
     public NPCBrain currentEncounter;
 
     public int queueLength;
 
-    public TextMeshProUGUI npcUIText;
+
+    public SpriteRenderer npcSpriteRenderer;
+    public TextMeshProUGUI npcUIText, npcNameText;
 
     public string playerResponse;
 
@@ -23,7 +25,12 @@ public class Encounter : MonoBehaviour
 
     void Start()
     {
+        queueArray = new NPCBrain[queueLength];
+        encounterQueue = new Queue<NPCBrain>();
         FillEncounterQueue();
+
+        ResetResponse();
+        //currentEncounter = encounterQueue.Peek();
     }
 
     void Update()
@@ -41,39 +48,59 @@ public class Encounter : MonoBehaviour
         {
             endEncounterTimer -= Time.deltaTime;
 
-            EndEncounter();
+            if (endEncounterTimer <= 0f)
+            {
+                EndEncounter();
+            }
         }
     }
 
     public void FillEncounterQueue()
     {
-        if (encounterQueue.Count < queueLength)
+        for (int i = 0; i < queueArray.Length; i++)
         {
-            for (int i = 0; i < queueLength; i++)
-            {
-                int rand = Random.Range(0, potentialEncounterList.Count);
-                if (!potentialEncounterList[rand].encounterComplete && !potentialEncounterList[rand].isConsequence)
-                {
-                    //encounterQueue.Add(potentialEncounterList[rand]);
-                }
-            }
+            int r = Random.Range(0, potentialEncounterList.Count);
+
+            queueArray[i] = potentialEncounterList[r];
+
+            queueArray[i].ResetNPCChoices();
+
+            encounterQueue.Enqueue(queueArray[i]);
         }
+
+        foreach(NPCBrain npc in queueArray)
+
+        Debug.Log(encounterQueue.Peek());
+
+
+        EncounterNPC();
+        //encountering = true;
+
+
     }
 
     public void EncounterNPC()
     {
-        //currentEncounter = encounterQueue[0];
+        currentEncounter = encounterQueue.Peek();
 
-        // instantiate npc prefab?
+        npcSpriteRenderer.sprite = currentEncounter.npcSprite;
+        npcNameText.text = currentEncounter.npcName;
+
 
         if (!currentEncounter.isConsequence)
         {
+            currentEncounter.ChooseDialogue();
             npcUIText.text = currentEncounter.chosenDialogue.dialogue;
+
         }
         else
         {
-            npcUIText.text = currentEncounter.consequenceDialogue.dialogue;
+            currentEncounter.chosenDialogue = currentEncounter.consequenceDialogue;
+            npcUIText.text = currentEncounter.chosenDialogue.dialogue;
         }
+
+        encountering = true;
+        
     }
 
     public void AwaitPlayerResponse()
@@ -105,42 +132,57 @@ public class Encounter : MonoBehaviour
         }
     }
 
-    public string YesResponse()
+    public void YesResponse()
     {
-        return playerResponse = "yes";
+        playerResponse = "yes";
     }
 
-    public string NoResponse()
+    public void NoResponse()
     {
-        return playerResponse = "no";
+        playerResponse = "no";
     }
 
-    public string IDKResponse()
+    public void IDKResponse()
     {
-        return playerResponse = "idk";
+        playerResponse = "idk";
     }
 
-    public string ResetResponse()
+    public void ResetResponse()
     {
-        return playerResponse = null;
+        playerResponse = null;
+        playerHasResponded = false;
     }
 
     public void EndEncounter()
     {
-        if (!currentEncounter.isConsequence)
+        if (!currentEncounter.chosenDialogue.isConsequence)
         {
-            currentEncounter.isConsequence = true;
-            //encounterQueue.Add(currentEncounter);
+            NPCBrain consequenceEncounter = currentEncounter;
+            consequenceEncounter.isConsequence = true;
+            consequenceEncounter.chosenDialogue = currentEncounter.consequenceDialogue;
+            //consequenceEncounter.playerResponseString = playerResponse;
 
-            //encounterQueue.Remove(currentEncounter);
+            encounterQueue.Enqueue(consequenceEncounter);
+
+            ResetResponse();
+
+            encounterQueue.Dequeue();
         }
         else
         {
-            currentEncounter.encounterComplete = true;
+            currentEncounter.chosenDialogue.isCompleted = true;
+
+            ResetResponse();
+
+            encounterQueue.Dequeue();
+            //FillEncounterQueue();
+            currentEncounter.ConsequenceDelivered();
+
         }
         endEncounterTimer = endEncounterTimerReset;
 
         encountering = false;
+        
 
         //NPC Leaves
     }

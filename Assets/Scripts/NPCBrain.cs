@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCBrain : MonoBehaviour
+[CreateAssetMenu (menuName = "NPC")]
+public class NPCBrain : ScriptableObject
 {
-    public Encounter encounter;
+    public string npcName;
+    
+    public Sprite npcSprite;
+
+    //public Encounter encounter;
 
     public List<DialogueSystem> dialogueOptions;
 
@@ -12,10 +17,25 @@ public class NPCBrain : MonoBehaviour
 
     public string playerResponseString;
 
-    public bool isConsequence, encounterComplete;
-    void Awake()
+    public bool isConsequence;
+
+
+    public void ChooseDialogue()
     {
         chosenDialogue = dialogueOptions[Random.Range(0, dialogueOptions.Count)];
+    }
+
+    public void ResetNPCChoices()
+    {
+        chosenDialogue = null;
+        consequenceDialogue = null;
+        playerResponseString = null;
+        isConsequence = false;
+    }
+
+    public void ConsequenceDelivered()
+    {
+        isConsequence = false;
     }
 
 }
