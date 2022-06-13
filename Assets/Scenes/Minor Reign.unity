@@ -209,6 +209,7 @@ MonoBehaviour:
   potentialEncounterList:
   - {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
   - {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+  - {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
   - {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
   - {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
   - {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
@@ -222,6 +223,8 @@ MonoBehaviour:
   playerHasResponded: 0
   endEncounterTimer: 5
   endEncounterTimerReset: 5
+  reputation: 25
+  happinessMeter: {fileID: 1866101274}
 --- !u!1 &197750047
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,11 +3904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6441987131055758797, guid: 8e0c310290ab806439832b588ca00751, type: 3}
       propertyPath: m_Value
-      value: 0.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6441987131055758797, guid: 8e0c310290ab806439832b588ca00751, type: 3}
       propertyPath: m_MaxValue
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6441987131055758797, guid: 8e0c310290ab806439832b588ca00751, type: 3}
       propertyPath: m_WholeNumbers

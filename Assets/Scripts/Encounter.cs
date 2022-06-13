@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 using TMPro;
 
 public class Encounter : MonoBehaviour
@@ -13,7 +13,6 @@ public class Encounter : MonoBehaviour
 
     public int queueLength;
 
-
     public SpriteRenderer npcSpriteRenderer;
     public TextMeshProUGUI npcUIText, npcNameText;
 
@@ -23,8 +22,13 @@ public class Encounter : MonoBehaviour
 
     public float endEncounterTimer, endEncounterTimerReset;
 
+    public float reputation;
+
+    public Slider happinessMeter;
+
     void Start()
     {
+        
         queueArray = new NPCBrain[queueLength];
         encounterQueue = new Queue<NPCBrain>();
         FillEncounterQueue();
@@ -53,6 +57,8 @@ public class Encounter : MonoBehaviour
                 EndEncounter();
             }
         }
+
+        happinessMeter.value = Mathf.Clamp(reputation, 0f, 100f);
     }
 
     public void FillEncounterQueue()
@@ -134,23 +140,38 @@ public class Encounter : MonoBehaviour
 
     public void YesResponse()
     {
-        playerResponse = "yes";
+        if (!playerHasResponded)
+        {
+            playerResponse = "yes";
+            reputation += currentEncounter.chosenDialogue.yesReputationAffect;
+        }
     }
 
     public void NoResponse()
     {
-        playerResponse = "no";
+        if (!playerHasResponded)
+        { 
+            playerResponse = "no";
+            reputation += currentEncounter.chosenDialogue.noReputationAffect;
+        }
     }
 
     public void IDKResponse()
     {
-        playerResponse = "idk";
+        if (!playerHasResponded)
+        {
+            playerResponse = "idk";
+            reputation += currentEncounter.chosenDialogue.idkReputationAffect;
+        }
     }
 
     public void ResetResponse()
     {
-        playerResponse = null;
-        playerHasResponded = false;
+        if (playerHasResponded)
+        {
+            playerResponse = null;
+            playerHasResponded = false;
+        }
     }
 
     public void EndEncounter()

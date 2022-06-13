@@ -11,6 +11,8 @@ public class DialogueSystem : ScriptableObject
     public string yesResponse, noResponse, idkResponse;
     public DialogueSystem yesConsequence, noConsequence, idkConsequence;
 
+    public float yesReputationAffect, noReputationAffect, idkReputationAffect;
+
     public bool hasEncountered, isConsequence, isCompleted;
    
 }
