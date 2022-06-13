@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08d1e46367e2a4fa76ca0c61ef539d, type: 3}
+  m_Name: Witch Animation
+  m_EditorClassIdentifier: 
+  title: Witch Encounter
+  animationFrames:
+  - {fileID: 21300000, guid: 97b18c1275a31f244a9c0f8b55657352, type: 3}
+  - {fileID: 21300000, guid: 748d4f91322f2de429304f4b4aa93c3a, type: 3}
+  - {fileID: 21300000, guid: 917b3123f9f922540bec53b2938373bc, type: 3}
+  - {fileID: 21300000, guid: c805273e2f592da4dad33f3e6067579f, type: 3}
+  - {fileID: 21300000, guid: b9c93d03fd4181b45a8de8837bea8a64, type: 3}
+  timePerFrameReset: 0.2

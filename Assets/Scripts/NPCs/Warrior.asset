@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Warrior
   m_EditorClassIdentifier: 
   npcName: Warrior
-  npcSprite: {fileID: -7385789195546760866, guid: 77ba605bbd83f4448bc8683510c3155e, type: 3}
+  spriteAnimation: {fileID: 11400000, guid: 6cadfc599e9a6204caa41d57d6fba9af, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: a9f07639adfd5884d85706d8c21d9caa, type: 2}
   - {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
@@ -23,3 +23,4 @@ MonoBehaviour:
   chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   playerResponseString: 
+  isConsequence: 0

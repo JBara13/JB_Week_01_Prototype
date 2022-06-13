@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Elder
   m_EditorClassIdentifier: 
   npcName: Elder
-  npcSprite: {fileID: 21300000, guid: 19cf56d790db07c4585d329f74dec492, type: 3}
+  spriteAnimation: {fileID: 11400000, guid: 6404d3081b8ecfe4b8f7e1c7586941ae, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: a9f07639adfd5884d85706d8c21d9caa, type: 2}
   - {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
@@ -23,3 +23,4 @@ MonoBehaviour:
   chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   playerResponseString: 
+  isConsequence: 0

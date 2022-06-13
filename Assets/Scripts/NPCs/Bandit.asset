@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bandit
   m_EditorClassIdentifier: 
   npcName: Bandit
-  npcSprite: {fileID: 4723107735738678597, guid: f374107ba66790641b6b7c9d0d9a49d3, type: 3}
+  spriteAnimation: {fileID: 11400000, guid: 517801af6ba28374285f8b67bc5a116f, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: a9f07639adfd5884d85706d8c21d9caa, type: 2}
   - {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
@@ -23,3 +23,4 @@ MonoBehaviour:
   chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   playerResponseString: 
+  isConsequence: 0

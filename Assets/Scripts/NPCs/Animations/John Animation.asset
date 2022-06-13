@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec08d1e46367e2a4fa76ca0c61ef539d, type: 3}
+  m_Name: John Animation
+  m_EditorClassIdentifier: 
+  title: John Encounter
+  animationFrames:
+  - {fileID: 21300000, guid: 30d5856fad0df014abb95b833d0a3ed5, type: 3}
+  - {fileID: 21300000, guid: d1b71ae5efe2b29459fe3ef17223d012, type: 3}
+  - {fileID: 21300000, guid: 0cba747df2ac37048bcae95dd5642cbd, type: 3}
+  - {fileID: 21300000, guid: f7c5de3d372c1f049aa874016d866320, type: 3}
+  - {fileID: 21300000, guid: ae8e8388823e904489789b2f37c94f20, type: 3}
+  timePerFrameReset: 0.2

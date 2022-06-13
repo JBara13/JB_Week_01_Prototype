@@ -13,34 +13,43 @@ public class Encounter : MonoBehaviour
 
     public int queueLength;
 
-    public SpriteRenderer npcSpriteRenderer;
+    //public SpriteRenderer npcSpriteRenderer;
+    public UIAnimator uiAnimator;
+
     public TextMeshProUGUI npcUIText, npcNameText;
 
     public string playerResponse;
 
     public bool encountering, playerHasResponded;
 
-    public float endEncounterTimer, endEncounterTimerReset;
+    public float endEncounterTimer;
+    private float endEncounterTimerReset;
 
     public float reputation;
 
-    public Slider happinessMeter;
+    public Slider happinessMeter, responseTimerBar;
 
     void Start()
     {
         
         queueArray = new NPCBrain[queueLength];
         encounterQueue = new Queue<NPCBrain>();
+
         FillEncounterQueue();
 
         ResetResponse();
         //currentEncounter = encounterQueue.Peek();
+
+        endEncounterTimerReset = endEncounterTimer;
+        responseTimerBar.maxValue = endEncounterTimerReset;
     }
 
     void Update()
     {
         if (!encountering)
         {
+            responseTimerBar.value = endEncounterTimer;
+
             EncounterNPC();
         }
         
@@ -50,6 +59,7 @@ public class Encounter : MonoBehaviour
         }
         else
         {
+            responseTimerBar.value = endEncounterTimer;
             endEncounterTimer -= Time.deltaTime;
 
             if (endEncounterTimer <= 0f)
@@ -89,7 +99,8 @@ public class Encounter : MonoBehaviour
     {
         currentEncounter = encounterQueue.Peek();
 
-        npcSpriteRenderer.sprite = currentEncounter.npcSprite;
+        //npcSpriteRenderer.sprite = currentEncounter.npcSprite;
+        uiAnimator.uiAnimation = currentEncounter.spriteAnimation;
         npcNameText.text = currentEncounter.npcName;
 
 

@@ -7,7 +7,9 @@ public class NPCBrain : ScriptableObject
 {
     public string npcName;
     
-    public Sprite npcSprite;
+    //public Sprite npcSprite;
+
+    public SpriteAnimation spriteAnimation;
 
     //public Encounter encounter;
 

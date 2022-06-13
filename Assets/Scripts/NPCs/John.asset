@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: John
   m_EditorClassIdentifier: 
   npcName: John
-  npcSprite: {fileID: 21300000, guid: 5a18d0bc7086e084181804f7b7fb876b, type: 3}
+  spriteAnimation: {fileID: 11400000, guid: e18647233f088664d917e27278b75d2e, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: a9f07639adfd5884d85706d8c21d9caa, type: 2}
   - {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
