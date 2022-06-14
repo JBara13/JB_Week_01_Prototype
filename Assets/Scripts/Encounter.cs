@@ -8,7 +8,7 @@ public class Encounter : MonoBehaviour
 {
     public List<NPCBrain> potentialEncounterList;
     public Queue<NPCBrain> encounterQueue;
-    private NPCBrain[] queueArray;
+    [SerializeField] private NPCBrain[] queueArray;
     public NPCBrain currentEncounter;
 
     public int queueLength;
@@ -25,23 +25,50 @@ public class Encounter : MonoBehaviour
     public float endEncounterTimer;
     private float endEncounterTimerReset;
 
-    public float reputation;
+    private ReputationMenu reputation;
+
+    //public float reputation;
 
     public Slider happinessMeter, responseTimerBar;
 
+    int count;
+
     void Start()
     {
-        
+        foreach (NPCBrain npc in potentialEncounterList)
+        {
+            npc.playerReputation = 50f;
+        }
+
+
         queueArray = new NPCBrain[queueLength];
         encounterQueue = new Queue<NPCBrain>();
 
-        FillEncounterQueue();
+        for (int i = 0; i < queueArray.Length; i++)
+        {
+            count = i;
+
+            queueArray[i] = FillEncounterQueue(count, queueArray);
+
+            queueArray[i].ResetNPCChoices();
+
+            encounterQueue.Enqueue(queueArray[i]);
+
+        }
+
+        //encounterQueue.Enqueue(npc);
 
         ResetResponse();
+
+        EncounterNPC();
         //currentEncounter = encounterQueue.Peek();
 
         endEncounterTimerReset = endEncounterTimer;
         responseTimerBar.maxValue = endEncounterTimerReset;
+
+        reputation = GetComponent<ReputationMenu>();
+        reputation.reputationParent.SetActive(false);
+
     }
 
     void Update()
@@ -68,31 +95,30 @@ public class Encounter : MonoBehaviour
             }
         }
 
-        happinessMeter.value = Mathf.Clamp(reputation, 0f, 100f);
+        happinessMeter.value = Mathf.Clamp(currentEncounter.playerReputation, 0f, 100f);
     }
 
-    public void FillEncounterQueue()
+    public NPCBrain FillEncounterQueue(int count, NPCBrain[] queueArray)
     {
-        for (int i = 0; i < queueArray.Length; i++)
+        int r = Random.Range(0, potentialEncounterList.Count);
+
+        int previousNPC = count - 1;
+
+        //Debug.Log("previous npc count = " + previousNPC);
+
+        if (previousNPC > -1 && queueArray[previousNPC] == potentialEncounterList[r]) 
         {
-            int r = Random.Range(0, potentialEncounterList.Count);
-
-            queueArray[i] = potentialEncounterList[r];
-
-            queueArray[i].ResetNPCChoices();
-
-            encounterQueue.Enqueue(queueArray[i]);
+            if (potentialEncounterList[r + 1] != null)
+            {
+                return potentialEncounterList[r + 1];
+            }
+            else
+            {
+                return potentialEncounterList[r - 1];
+            }
         }
 
-        foreach(NPCBrain npc in queueArray)
-
-        Debug.Log(encounterQueue.Peek());
-
-
-        EncounterNPC();
-        //encountering = true;
-
-
+        return potentialEncounterList[r];
     }
 
     public void EncounterNPC()
@@ -146,6 +172,8 @@ public class Encounter : MonoBehaviour
                 playerHasResponded = true;
 
             }
+
+            reputation.UpdateNPCProfiles();
         }
     }
 
@@ -154,7 +182,11 @@ public class Encounter : MonoBehaviour
         if (!playerHasResponded)
         {
             playerResponse = "yes";
-            reputation += currentEncounter.chosenDialogue.yesReputationAffect;
+
+            foreach (DecisionEffect effect in currentEncounter.chosenDialogue.yesEffectsList)
+            {
+                effect.npc.playerReputation += effect.reputationEffect;
+            }
         }
     }
 
@@ -163,7 +195,11 @@ public class Encounter : MonoBehaviour
         if (!playerHasResponded)
         { 
             playerResponse = "no";
-            reputation += currentEncounter.chosenDialogue.noReputationAffect;
+
+            foreach (DecisionEffect effect in currentEncounter.chosenDialogue.noEffectsList)
+            {
+                effect.npc.playerReputation += effect.reputationEffect;
+            }
         }
     }
 
@@ -172,7 +208,11 @@ public class Encounter : MonoBehaviour
         if (!playerHasResponded)
         {
             playerResponse = "idk";
-            reputation += currentEncounter.chosenDialogue.idkReputationAffect;
+
+            foreach (DecisionEffect effect in currentEncounter.chosenDialogue.idkEffectsList)
+            {
+                effect.npc.playerReputation += effect.reputationEffect;
+            }
         }
     }
 
@@ -187,11 +227,17 @@ public class Encounter : MonoBehaviour
 
     public void EndEncounter()
     {
-        if (!currentEncounter.chosenDialogue.isConsequence)
+        if (currentEncounter.chosenDialogue.hasConsequence)
         {
+            EncounterHistory currentEncounterHistory = new EncounterHistory();
+            currentEncounterHistory.dialogue = currentEncounter.chosenDialogue;
+            currentEncounterHistory.playerResponse = playerResponse;
+
             NPCBrain consequenceEncounter = currentEncounter;
             consequenceEncounter.isConsequence = true;
             consequenceEncounter.chosenDialogue = currentEncounter.consequenceDialogue;
+
+            currentEncounter.encounterHistory.Add(currentEncounterHistory);
             //consequenceEncounter.playerResponseString = playerResponse;
 
             encounterQueue.Enqueue(consequenceEncounter);
@@ -206,11 +252,14 @@ public class Encounter : MonoBehaviour
 
             ResetResponse();
 
-            encounterQueue.Dequeue();
-            //FillEncounterQueue();
             currentEncounter.ConsequenceDelivered();
 
+            encounterQueue.Dequeue();
+            //FillEncounterQueue();
+
         }
+        //reputation.UpdateNPCProfiles();
+
         endEncounterTimer = endEncounterTimerReset;
 
         encountering = false;

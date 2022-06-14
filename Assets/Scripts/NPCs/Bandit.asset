@@ -24,3 +24,4 @@ MonoBehaviour:
   consequenceDialogue: {fileID: 0}
   playerResponseString: 
   isConsequence: 0
+  encounterHistory: []

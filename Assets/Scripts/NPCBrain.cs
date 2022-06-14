@@ -21,6 +21,10 @@ public class NPCBrain : ScriptableObject
 
     public bool isConsequence;
 
+    public float playerReputation;
+
+    public List<EncounterHistory> encounterHistory;
+
 
     public void ChooseDialogue()
     {
