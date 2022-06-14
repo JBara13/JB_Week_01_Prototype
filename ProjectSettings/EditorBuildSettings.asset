@@ -11,22 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minor Reign.unity
     guid: e8d3a310d97cc5f4b9881f9fe38c5325
-  - enabled: 1
-    path: Assets/Scenes/Minor Reign 1.unity
-    guid: 1022ff4b18e297b409f2376858328249
-  - enabled: 1
-    path: Assets/Scenes/Minor Reign 2.unity
-    guid: c768d398dc9bc5349a5225840f9d2ec5
-  - enabled: 1
-    path: Assets/Scenes/Minor Reign 3.unity
-    guid: f833b1802e75f5446a1687cfc4a6b64c
-  - enabled: 1
-    path: Assets/Scenes/Minor Reign 4.unity
-    guid: dc1aac268c1031d42ae5e5ca887aab97
-  - enabled: 1
-    path: Assets/Scenes/Minor Reign 5.unity
-    guid: cbdeb6eaeda59d74297e8c7e30afc6f2
-  - enabled: 1
-    path: Assets/Scenes/Minor Reign End 1.unity
-    guid: 19d2a95cb166deb4aa8e5161651374ea
   m_configObjects: {}

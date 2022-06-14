@@ -24,3 +24,12 @@ MonoBehaviour:
   consequenceDialogue: {fileID: 0}
   playerResponseString: 
   isConsequence: 0
+  playerReputation: 50
+  encounterHistory:
+  - dialogue: {fileID: 11400000, guid: 20eedf257ba18c7409421281a0fa8c98, type: 2}
+    playerResponse: no
+  - dialogue: {fileID: 11400000, guid: a9f07639adfd5884d85706d8c21d9caa, type: 2}
+    playerResponse: idk
+  - dialogue: {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
+    playerResponse: yes
+  loseScenarioText: You were killed by the warrior

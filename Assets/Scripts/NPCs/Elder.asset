@@ -24,3 +24,8 @@ MonoBehaviour:
   consequenceDialogue: {fileID: 0}
   playerResponseString: 
   isConsequence: 0
+  playerReputation: 50
+  encounterHistory:
+  - dialogue: {fileID: 11400000, guid: a9f07639adfd5884d85706d8c21d9caa, type: 2}
+    playerResponse: yes
+  loseScenarioText: You were killed by the elder

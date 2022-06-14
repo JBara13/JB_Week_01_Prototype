@@ -24,4 +24,6 @@ MonoBehaviour:
   consequenceDialogue: {fileID: 0}
   playerResponseString: 
   isConsequence: 0
+  playerReputation: 50
   encounterHistory: []
+  loseScenarioText: You were killed by the bandit

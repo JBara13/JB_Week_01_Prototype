@@ -25,6 +25,8 @@ public class NPCBrain : ScriptableObject
 
     public List<EncounterHistory> encounterHistory;
 
+    public string loseScenarioText;
+
 
     public void ChooseDialogue()
     {
@@ -43,5 +45,4 @@ public class NPCBrain : ScriptableObject
     {
         isConsequence = false;
     }
-
 }

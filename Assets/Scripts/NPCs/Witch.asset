@@ -24,3 +24,12 @@ MonoBehaviour:
   consequenceDialogue: {fileID: 0}
   playerResponseString: 
   isConsequence: 0
+  playerReputation: 50
+  encounterHistory:
+  - dialogue: {fileID: 11400000, guid: 3aa68fec98cc17043b714f272abbfd67, type: 2}
+    playerResponse: yes
+  - dialogue: {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
+    playerResponse: yes
+  - dialogue: {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
+    playerResponse: yes
+  loseScenarioText: You were killed by the witch

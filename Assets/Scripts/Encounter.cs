@@ -11,19 +11,20 @@ public class Encounter : MonoBehaviour
     [SerializeField] private NPCBrain[] queueArray;
     public NPCBrain currentEncounter;
 
-    public int queueLength;
+    public int queueLength, turnsRemaining;
 
     //public SpriteRenderer npcSpriteRenderer;
     public UIAnimator uiAnimator;
 
-    public TextMeshProUGUI npcUIText, npcNameText;
+    public TextMeshProUGUI npcUIText, npcNameText, turnsRemainingUI, gameOverText;
+    public GameObject gameOverPanel;
 
     public string playerResponse;
 
-    public bool encountering, playerHasResponded;
+    public bool encountering, playerHasResponded, displayTurnsRemaining, gameOver;
 
-    public float endEncounterTimer;
-    private float endEncounterTimerReset;
+    public float endEncounterTimer, turnsRemainingDisplayTimer;
+    private float endEncounterTimerReset, turnsRemainingDisplayTimerReset;
 
     private ReputationMenu reputation;
 
@@ -35,6 +36,12 @@ public class Encounter : MonoBehaviour
 
     void Start()
     {
+        reputation = GetComponent<ReputationMenu>();
+        reputation.reputationParent.SetActive(false);
+
+        displayTurnsRemaining = true;
+        gameOverPanel.SetActive(false);
+
         foreach (NPCBrain npc in potentialEncounterList)
         {
             npc.playerReputation = 50f;
@@ -56,18 +63,16 @@ public class Encounter : MonoBehaviour
 
         }
 
-        //encounterQueue.Enqueue(npc);
+        endEncounterTimerReset = endEncounterTimer;
+        responseTimerBar.maxValue = endEncounterTimerReset;
+        turnsRemainingDisplayTimerReset = turnsRemainingDisplayTimer;
+
+
 
         ResetResponse();
 
         EncounterNPC();
-        //currentEncounter = encounterQueue.Peek();
 
-        endEncounterTimerReset = endEncounterTimer;
-        responseTimerBar.maxValue = endEncounterTimerReset;
-
-        reputation = GetComponent<ReputationMenu>();
-        reputation.reputationParent.SetActive(false);
 
     }
 
@@ -93,6 +98,41 @@ public class Encounter : MonoBehaviour
             {
                 EndEncounter();
             }
+        }
+
+        if (displayTurnsRemaining)
+        {
+            turnsRemainingUI.enabled = true;
+            if (turnsRemaining > 1)
+            {
+                turnsRemainingUI.text = "Your reign will end in " + turnsRemaining.ToString() + " turns";
+            }
+            else if (turnsRemaining == 1)
+            {
+                turnsRemainingUI.text = "Your reign will end after this turn";
+            }
+            else
+            {
+                turnsRemainingUI.text = "Congratulations!";
+            }
+
+            turnsRemainingDisplayTimer -= Time.deltaTime;
+
+            if (turnsRemainingDisplayTimer <= 2f)
+            {
+                turnsRemainingUI.alpha = Mathf.Lerp(0f, 1f, turnsRemainingDisplayTimer);
+            }
+
+            if (turnsRemainingDisplayTimer <= 0f)
+            {
+                
+                displayTurnsRemaining = false;
+            }
+        }
+        else
+        {
+            turnsRemainingDisplayTimer = turnsRemainingDisplayTimerReset;
+            turnsRemainingUI.enabled = false;
         }
 
         happinessMeter.value = Mathf.Clamp(currentEncounter.playerReputation, 0f, 100f);
@@ -174,6 +214,15 @@ public class Encounter : MonoBehaviour
             }
 
             reputation.UpdateNPCProfiles();
+
+            foreach (NPCBrain npc in potentialEncounterList)
+            {
+                if (npc.playerReputation <= 0f)
+                {
+                    gameOver = true;
+                    gameOverText.text = npc.loseScenarioText;
+                }
+            }
         }
     }
 
@@ -262,9 +311,36 @@ public class Encounter : MonoBehaviour
 
         endEncounterTimer = endEncounterTimerReset;
 
+        turnsRemaining--;
+
+        if (turnsRemaining <= 0)
+        {
+            //player wins
+            gameOverPanel.SetActive(true);
+            gameOverText.text = "You lived to the end of your reign";
+
+            //run win game stuff
+        }
+        else
+        {
+            turnsRemainingUI.text = "Your reign will end in " + turnsRemaining.ToString() + " turns";
+        }
+
+        if (gameOver)
+        {
+            LoseGame();
+        }
+
+        displayTurnsRemaining = true;
         encountering = false;
         
 
         //NPC Leaves
+    }
+
+    public void LoseGame()
+    {
+        //enable lose panel
+        gameOverPanel.SetActive(true);
     }
 }
