@@ -7,4 +7,7 @@ public class EncounterHistory
 {
     public DialogueSystem dialogue;
     public string playerResponse;
+
+    public List<NPCBrain> affectedNPCs = new List<NPCBrain>();
+    public NPCBrain consequenceNPC;
 }

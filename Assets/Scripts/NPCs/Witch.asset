@@ -22,14 +22,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3aa68fec98cc17043b714f272abbfd67, type: 2}
   chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
+  loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 
   isConsequence: 0
   playerReputation: 50
   encounterHistory:
   - dialogue: {fileID: 11400000, guid: 3aa68fec98cc17043b714f272abbfd67, type: 2}
     playerResponse: yes
+    affectedNPCs: []
+    consequenceNPC: {fileID: 0}
   - dialogue: {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
     playerResponse: yes
+    affectedNPCs: []
+    consequenceNPC: {fileID: 0}
   - dialogue: {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
     playerResponse: yes
+    affectedNPCs: []
+    consequenceNPC: {fileID: 0}
   loseScenarioText: You were killed by the witch

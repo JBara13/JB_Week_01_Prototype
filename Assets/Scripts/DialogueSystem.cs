@@ -9,12 +9,13 @@ public class DialogueSystem : ScriptableObject
     public string dialogue;
     [TextArea(3, 10)] // for inspector
     public string yesResponse, noResponse, idkResponse;
-    public DialogueSystem yesConsequence, noConsequence, idkConsequence;
+    //public DialogueSystem yesConsequence, noConsequence, idkConsequence;
 
     //public float yesReputationAffect, noReputationAffect, idkReputationAffect;
+    public bool hasEncountered, hasConsequence, isCompleted;
 
     public List<DecisionEffect> yesEffectsList, noEffectsList, idkEffectsList;
 
-    public bool hasEncountered, hasConsequence, isCompleted;
+    
    
 }

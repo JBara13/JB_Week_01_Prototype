@@ -7,4 +7,7 @@ public class DecisionEffect
 {
     public NPCBrain npc;
     public float reputationEffect;
+
+    public List<DialogueSystem> consequenceDialogueList;
+
 }

@@ -16,9 +16,9 @@ MonoBehaviour:
   yesResponse: 
   noResponse: 
   idkResponse: 
-  yesConsequence: {fileID: 0}
-  noConsequence: {fileID: 0}
-  idkConsequence: {fileID: 0}
   hasEncountered: 0
-  isConsequence: 1
-  isCompleted: 0
+  hasConsequence: 0
+  isCompleted: 1
+  yesEffectsList: []
+  noEffectsList: []
+  idkEffectsList: []

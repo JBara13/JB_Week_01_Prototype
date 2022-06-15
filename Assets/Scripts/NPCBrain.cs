@@ -15,11 +15,11 @@ public class NPCBrain : ScriptableObject
 
     public List<DialogueSystem> dialogueOptions;
 
-    public DialogueSystem chosenDialogue, consequenceDialogue;
+    public DialogueSystem chosenDialogue, consequenceDialogue, loseDialogue;
 
     public string playerResponseString;
 
-    public bool isConsequence;
+    public bool isConsequence, isLoseEncounter;
 
     public float playerReputation;
 
@@ -39,6 +39,8 @@ public class NPCBrain : ScriptableObject
         consequenceDialogue = null;
         playerResponseString = null;
         isConsequence = false;
+        playerReputation = 50f;
+        isLoseEncounter = false;
     }
 
     public void ConsequenceDelivered()
