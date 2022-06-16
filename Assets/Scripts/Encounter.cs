@@ -7,6 +7,7 @@ using TMPro;
 public class Encounter : MonoBehaviour
 {
     public List<NPCBrain> potentialEncounterList;
+    public List<NPCBrain> nextEncounterList;
     public LinkedList<NPCBrain> encounterQueue;
     //public Queue<NPCBrain> encounterQueue;
     [SerializeField] private NPCBrain[] queueArray;
@@ -38,6 +39,9 @@ public class Encounter : MonoBehaviour
 
     void Start()
     {
+        nextEncounterList = new List<NPCBrain>();
+        nextEncounterList.AddRange(potentialEncounterList);
+
         reputation = GetComponent<ReputationMenu>();
         reputation.reputationParent.SetActive(false);
 
@@ -56,9 +60,12 @@ public class Encounter : MonoBehaviour
 
         for (int i = 0; i < queueLength; i++)
         {
+            if (encounterQueue.Count >= 1f)
+            { 
+                SetNextEncounter();
+            }
 
             encounterQueue.AddLast(FillEncounterQueue());
-
         }
 
         endEncounterTimerReset = endEncounterTimer;
@@ -89,12 +96,24 @@ public class Encounter : MonoBehaviour
         {
             responseTimerBar.maxValue = endEncounterTimerReset;
 
-            if (encountering && !playerHasResponded)
+            //{
+            //    AwaitPlayerResponse();
+            //}
+            //else
+            if (encountering && playerHasResponded)
             {
-                AwaitPlayerResponse();
-            }
-            else
-            {
+                reputation.UpdateNPCProfiles();
+
+                foreach (NPCBrain npc in potentialEncounterList)
+                {
+                    if (npc.playerReputation <= 0f)
+                    {
+                        //encounterQueue.AddFirst(npc);
+
+                        npc.isLoseEncounter = true;
+                    }
+                }
+                responseTimerBar.maxValue = endEncounterTimerReset;
                 responseTimerBar.value = endEncounterTimer;
                 endEncounterTimer -= Time.deltaTime;
 
@@ -166,13 +185,28 @@ public class Encounter : MonoBehaviour
 
     public NPCBrain FillEncounterQueue()
     {
-        int r = Random.Range(0, potentialEncounterList.Count);
+        int r = Random.Range(0, nextEncounterList.Count);
 
-        return potentialEncounterList[r];
+        return nextEncounterList[r];
+    }
+
+    void SetNextEncounter()
+    {
+        if (nextEncounterList.Contains(encounterQueue.Last.Value))
+        {
+            nextEncounterList.Remove(encounterQueue.Last.Value);
+        }
+
+        if (nextEncounterList.Count <= 0)
+        {
+            nextEncounterList.AddRange(potentialEncounterList);
+        }
     }
 
     public void EncounterNPC()
     {
+        ResetResponse();
+
         foreach (NPCBrain npc in potentialEncounterList)
         {
             if (npc.isLoseEncounter)
@@ -206,6 +240,7 @@ public class Encounter : MonoBehaviour
         }
         else
         {
+            ResetResponse();
             //currentEncounter.chosenDialogue = currentEncounter.consequenceDialogue;
             npcUIText.text = currentEncounter.chosenDialogue.dialogue;
         }
@@ -214,98 +249,109 @@ public class Encounter : MonoBehaviour
         
     }
 
-    public void AwaitPlayerResponse()
-    {
-        if (playerResponse != null)
-        {
-            if (playerResponse == "yes")
-            {
-                //consequenceEncounter.consequenceDialogue = currentEncounter.chosenDialogue.yesConsyesequence;
-                npcUIText.text = currentEncounter.chosenDialogue.yesResponse;
-                playerHasResponded = true;
-            }
+    //public void AwaitPlayerResponse()
+    //{
+    //    if (playerResponse != null)
+    //    {
+    //        if (playerResponse == "yes")
+    //        {
+    //            //consequenceEncounter.consequenceDialogue = currentEncounter.chosenDialogue.yesConsyesequence;
+    //            npcUIText.text = currentEncounter.chosenDialogue.yesResponse;
+    //            playerHasResponded = true;
+    //        }
 
-            if (playerResponse == "no")
-            {
-                //consequenceEncounter.consequenceDialogue = currentEncounter.chosenDialogue.noConsequence;
-                npcUIText.text = currentEncounter.chosenDialogue.noResponse;
-                playerHasResponded = true;
+    //        if (playerResponse == "no")
+    //        {
+    //            //consequenceEncounter.consequenceDialogue = currentEncounter.chosenDialogue.noConsequence;
+    //            npcUIText.text = currentEncounter.chosenDialogue.noResponse;
+    //            playerHasResponded = true;
 
-            }
+    //        }
 
-            if (playerResponse == "idk")
-            {
-                //consequenceEncounter.consequenceDialogue = currentEncounter.chosenDialogue.idkConsequence;
-                npcUIText.text = currentEncounter.chosenDialogue.idkResponse;
-                playerHasResponded = true;
+    //        if (playerResponse == "idk")
+    //        {
+    //            //consequenceEncounter.consequenceDialogue = currentEncounter.chosenDialogue.idkConsequence;
+    //            npcUIText.text = currentEncounter.chosenDialogue.idkResponse;
+    //            playerHasResponded = true;
 
-            }
-
-            reputation.UpdateNPCProfiles();
-
-            foreach (NPCBrain npc in potentialEncounterList)
-            {
-                if (npc.playerReputation <= 0f)
-                {
-                    //encounterQueue.AddFirst(npc);
-                    
-                    npc.isLoseEncounter = true;
-                }
-            }
-        }
-    }
+    //        }
+    //    }
+    //}
 
     public void YesResponse()
     {
-        if (!playerHasResponded)
+        if (!playerHasResponded && !currentEncounter.isConsequence)
         {
             playerResponse = "yes";
+
+            npcUIText.text = currentEncounter.chosenDialogue.yesResponse;
+
 
             foreach (DecisionEffect effect in currentEncounter.chosenDialogue.yesEffectsList)
             {
                 effect.npc.playerReputation += effect.reputationEffect;
             }
 
-            int r = Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList.Count);
-            consequenceEncounter = currentEncounter.chosenDialogue.yesEffectsList[r].npc;
-            consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList.Count)];
-            consequenceEncounter.isConsequence = true;
+            if (currentEncounter.chosenDialogue.hasConsequence)
+            {
+                int r = Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList.Count);
+                consequenceEncounter = currentEncounter.chosenDialogue.yesEffectsList[r].npc;
+                consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList.Count)];
+            }
+
+            playerHasResponded = true;
         }
     }
 
     public void NoResponse()
     {
-        if (!playerHasResponded)
+        if (!playerHasResponded && !currentEncounter.isConsequence)
         { 
             playerResponse = "no";
+
+            npcUIText.text = currentEncounter.chosenDialogue.noResponse;
 
             foreach (DecisionEffect effect in currentEncounter.chosenDialogue.noEffectsList)
             {
                 effect.npc.playerReputation += effect.reputationEffect;
             }
 
-            int r = Random.Range(0, currentEncounter.chosenDialogue.noEffectsList.Count);
-            consequenceEncounter = currentEncounter.chosenDialogue.noEffectsList[r].npc;
-            consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.noEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.noEffectsList[r].consequenceDialogueList.Count)];
-            consequenceEncounter.isConsequence = true;
+            if (currentEncounter.chosenDialogue.hasConsequence)
+            {
+                int r = Random.Range(0, currentEncounter.chosenDialogue.noEffectsList.Count);
+                consequenceEncounter = currentEncounter.chosenDialogue.noEffectsList[r].npc;
+                consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.noEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.noEffectsList[r].consequenceDialogueList.Count)];
+                //consequenceEncounter.isConsequence = true;
+            }
+
+            playerHasResponded = true;
+
         }
     }
 
     public void IDKResponse()
     {
-        if (!playerHasResponded)
+        if (!playerHasResponded && !currentEncounter.isConsequence)
         {
             playerResponse = "idk";
+
+            npcUIText.text = currentEncounter.chosenDialogue.idkResponse;
+
 
             foreach (DecisionEffect effect in currentEncounter.chosenDialogue.idkEffectsList)
             {
                 effect.npc.playerReputation += effect.reputationEffect;
             }
 
-            int r = Random.Range(0, currentEncounter.chosenDialogue.idkEffectsList.Count);
-            consequenceEncounter = currentEncounter.chosenDialogue.idkEffectsList[r].npc;
-            consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.idkEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.idkEffectsList[r].consequenceDialogueList.Count)];
-            consequenceEncounter.isConsequence = true;
+            if (currentEncounter.chosenDialogue.hasConsequence)
+            {
+                int r = Random.Range(0, currentEncounter.chosenDialogue.idkEffectsList.Count);
+                consequenceEncounter = currentEncounter.chosenDialogue.idkEffectsList[r].npc;
+                consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.idkEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.idkEffectsList[r].consequenceDialogueList.Count)];
+                //consequenceEncounter.isConsequence = true;
+            }
+
+            playerHasResponded = true;
         }
     }
 
@@ -320,6 +366,11 @@ public class Encounter : MonoBehaviour
 
     public void EndEncounter()
     {
+        if (!currentEncounter.isConsequence)
+        {
+            turnsRemaining--;
+        }
+
         if (currentEncounter.chosenDialogue.hasConsequence)
         {
             EncounterHistory currentEncounterHistory = new EncounterHistory();
@@ -343,9 +394,24 @@ public class Encounter : MonoBehaviour
             //encounterQueue.Enqueue(consequenceEncounter);
             currentEncounter.encounterHistory.Add(currentEncounterHistory);
 
-            ResetResponse();
+            //ResetResponse();
+            consequenceEncounter.isConsequence = true;
+
 
             encounterQueue.RemoveFirst();
+
+            if (encounterQueue.Count <= 0)
+            {
+                for (int i = 0; i < queueLength; i++)
+                {
+                    if (encounterQueue.Count >= 1f)
+                    {
+                        SetNextEncounter();
+                    }
+
+                    encounterQueue.AddLast(FillEncounterQueue());
+                }
+            }
             //encounterQueue.AddFirst(consequenceEncounter);
             encounterQueue.AddAfter(encounterQueue.First, consequenceEncounter);
 
@@ -353,9 +419,9 @@ public class Encounter : MonoBehaviour
         }
         else
         {
-            currentEncounter.chosenDialogue.isCompleted = true;
+            //currentEncounter.chosenDialogue.isCompleted = true;
 
-            ResetResponse();
+            //ResetResponse();
 
             currentEncounter.ConsequenceDelivered();
 
@@ -368,13 +434,11 @@ public class Encounter : MonoBehaviour
         endEncounterTimer = endEncounterTimerReset;
         consequenceTimer = consequenceTimerReset;
 
-        turnsRemaining--;
-
         if (turnsRemaining <= 0)
         {
             //player wins
             gameOverPanel.SetActive(true);
-            gameOverText.text = "You lived to the end of your reign";
+            gameOverText.text = "You lived to the end of your reign! A worthy King!";
 
             //run win game stuff
         }

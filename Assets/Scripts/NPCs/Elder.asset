@@ -22,6 +22,6 @@ MonoBehaviour:
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 80
+  playerReputation: 50
   encounterHistory: []
   loseScenarioText: You were killed by the elder

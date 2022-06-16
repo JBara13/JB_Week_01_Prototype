@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: IDK Consequence 5
+  m_Name: John IDK Consequence 4
   m_EditorClassIdentifier: 
-  dialogue: They were able to stop the fight from getting worse, but someone else
-    got severly injured. Do better.
+  dialogue: The guards ate all the food I prepared for the prisoners. How could you
+    let them do that! You're not fit for a ruler of this land at all!
   yesResponse: 
   noResponse: 
   idkResponse: 

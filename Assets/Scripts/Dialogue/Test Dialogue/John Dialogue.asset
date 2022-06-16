@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: Dialogue 3
+  m_Name: John Dialogue
   m_EditorClassIdentifier: 
-  dialogue: "Your Highness! I am feeling sooooooo jittery toooooday! Allow me toooo
-    put ooooon a shoooooow fooooor the people oooof the kingdooooom! It will be fantastic!\r"
-  yesResponse: "HOOOOOOORAY!!\r\nThank yoooou!\r\nI will get this show started real
-    sooooooon!\r"
-  noResponse: "Oh\u2026 I was looking forward to it too. Whatever you desire, Your
-    Highness.\r"
-  idkResponse: 'Oh? I guess we should maybe schedule it for another time then. '
+  dialogue: "Hello, Your Highness. I have made some food for the people in the dungeon,
+    they must be starving. Shall I bring it down to them?\t"
+  yesResponse: "Thank you for letting me do this. They deserve to at least eat and
+    survive.\t"
+  noResponse: "Really? But they're human too! Tyrant...\t"
+  idkResponse: I'll leave them with the guards. I guess they can decide what to do
+    with it.
   hasEncountered: 0
   hasConsequence: 1
   isCompleted: 0
@@ -26,62 +26,62 @@ MonoBehaviour:
   - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
     reputationEffect: 10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 5266ac67550bcb54c804102ad1fa18f2, type: 2}
+    - {fileID: 11400000, guid: 744f8078d1bb791429bfa96150594c46, type: 2}
   - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
     reputationEffect: 10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 5266ac67550bcb54c804102ad1fa18f2, type: 2}
+    - {fileID: 11400000, guid: 4435b7e1d909e5e4d887cabc8065fe05, type: 2}
   - npc: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
-    reputationEffect: -10
+    reputationEffect: 10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 5266ac67550bcb54c804102ad1fa18f2, type: 2}
+    - {fileID: 11400000, guid: f1e4898e8fb1c3d4da487517e378bfd3, type: 2}
   - npc: {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
     reputationEffect: 10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 5266ac67550bcb54c804102ad1fa18f2, type: 2}
+    - {fileID: 11400000, guid: 744f8078d1bb791429bfa96150594c46, type: 2}
   - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
-    reputationEffect: 10
+    reputationEffect: -10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 5266ac67550bcb54c804102ad1fa18f2, type: 2}
+    - {fileID: 11400000, guid: 744f8078d1bb791429bfa96150594c46, type: 2}
   noEffectsList:
   - npc: {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
-    reputationEffect: -10
+    reputationEffect: 0
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 5ac6b47c7571d7e4497ab556140fa455, type: 2}
+    - {fileID: 11400000, guid: 757f6e3a8b9aee5448706073af5d9a4f, type: 2}
   - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
-    reputationEffect: -10
-    consequenceDialogueList:
-    - {fileID: 11400000, guid: 5ac6b47c7571d7e4497ab556140fa455, type: 2}
-  - npc: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
     reputationEffect: 10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 5ac6b47c7571d7e4497ab556140fa455, type: 2}
-  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
-    reputationEffect: -10
-    consequenceDialogueList:
-    - {fileID: 11400000, guid: 5ac6b47c7571d7e4497ab556140fa455, type: 2}
+    - {fileID: 11400000, guid: d15804738bbac8544af80738218ed4ad, type: 2}
   - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: ff141b8d98924314894bb327d454cfc0, type: 2}
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: 0
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 757f6e3a8b9aee5448706073af5d9a4f, type: 2}
+  - npc: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
     reputationEffect: -10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 5ac6b47c7571d7e4497ab556140fa455, type: 2}
+    - {fileID: 11400000, guid: 757f6e3a8b9aee5448706073af5d9a4f, type: 2}
   idkEffectsList:
   - npc: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
-    reputationEffect: 0
-    consequenceDialogueList:
-    - {fileID: 11400000, guid: 7dccee8e98168de43a8f0a7747e15cfe, type: 2}
-  - npc: {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
     reputationEffect: -10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 7dccee8e98168de43a8f0a7747e15cfe, type: 2}
+    - {fileID: 11400000, guid: 757f6e3a8b9aee5448706073af5d9a4f, type: 2}
+  - npc: {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
+    reputationEffect: 0
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 757f6e3a8b9aee5448706073af5d9a4f, type: 2}
   - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
     reputationEffect: 0
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 7dccee8e98168de43a8f0a7747e15cfe, type: 2}
+    - {fileID: 11400000, guid: 757f6e3a8b9aee5448706073af5d9a4f, type: 2}
   - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
-    reputationEffect: 0
+    reputationEffect: -15
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 7dccee8e98168de43a8f0a7747e15cfe, type: 2}
+    - {fileID: 11400000, guid: 77a0aabcbd881564f90f4c2b79bdceb2, type: 2}
   - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
-    reputationEffect: 0
+    reputationEffect: 10
     consequenceDialogueList:
-    - {fileID: 11400000, guid: 7dccee8e98168de43a8f0a7747e15cfe, type: 2}
+    - {fileID: 11400000, guid: d15804738bbac8544af80738218ed4ad, type: 2}

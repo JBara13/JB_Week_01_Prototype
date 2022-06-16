@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: Yes Consequence 5
+  m_Name: John Yes Consequence 4
   m_EditorClassIdentifier: 
-  dialogue: We stopped them and no one was injured, nor any casualties. The citizens
-    thank you for sending us out as soon as we heard. Praise our Great Ruler!
+  dialogue: We should always treat eachother as humans. No matter what they have
+    done. It was the right thing to do. I thank you.
   yesResponse: 
   noResponse: 
   idkResponse: 
   hasEncountered: 0
   hasConsequence: 0
-  isCompleted: 0
+  isCompleted: 1
   yesEffectsList: []
   noEffectsList: []
   idkEffectsList: []

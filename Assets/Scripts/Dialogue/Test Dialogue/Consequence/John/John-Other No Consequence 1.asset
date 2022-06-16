@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: Yes Consequence 3
+  m_Name: John-Other No Consequence 1
   m_EditorClassIdentifier: 
-  dialogue: "The shoooooww was AMAZING! Thank you for letting me perform, Your Highness!
-    The people enjoyed it!\r"
+  dialogue: If you don't feed the prisoners soon they might start eating each other!
   yesResponse: 
   noResponse: 
   idkResponse: 

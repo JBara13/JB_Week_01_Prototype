@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: IDK Consequence 4
+  m_Name: Elder IDK Consequence 2
   m_EditorClassIdentifier: 
-  dialogue: The guards ate all the food I prepared for the prisoners. How could you
-    let them do that! You're not fit for a ruler of this land at all!
+  dialogue: "The magic went horribly wrong! They all turned into frogs! I knew I
+    shouldn\u2019t have done it in the first place! \r"
   yesResponse: 
   noResponse: 
   idkResponse: 

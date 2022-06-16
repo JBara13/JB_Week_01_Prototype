@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
+  m_Name: Bandit Dialogue
+  m_EditorClassIdentifier: 
+  dialogue: Heyo, Your Highness! Surely you just let me steal from the wealthier
+    people of the kingdom to give to the poor! It'll be great to see those snobs
+    cry. The poor needs it.
+  yesResponse: Alright! I won't let you down! *whispering* all according to plan...
+  noResponse: Darn it all! I really thought if I could help the poor at the same
+    time, it'd be okay!
+  idkResponse: Hmmm... In that case, I'll leave them alone... Hehe...
+  hasEncountered: 0
+  hasConsequence: 1
+  isCompleted: 0
+  yesEffectsList:
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 24040cb7a5f9e8c4fb913fbcc1e7c3b9, type: 2}
+  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 24040cb7a5f9e8c4fb913fbcc1e7c3b9, type: 2}
+  - npc: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
+    reputationEffect: 15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 4977e59f6790ade4fb5898e3527138fd, type: 2}
+  - npc: {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 24040cb7a5f9e8c4fb913fbcc1e7c3b9, type: 2}
+  - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 24040cb7a5f9e8c4fb913fbcc1e7c3b9, type: 2}
+  noEffectsList:
+  - npc: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 38d1b423522a2f24f8ce3147901dd9db, type: 2}
+  idkEffectsList:
+  - npc: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 45a2eacb2ec017b429ea4b50cbdeca65, type: 2}
+  - npc: {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 24040cb7a5f9e8c4fb913fbcc1e7c3b9, type: 2}
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 24040cb7a5f9e8c4fb913fbcc1e7c3b9, type: 2}
+  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 24040cb7a5f9e8c4fb913fbcc1e7c3b9, type: 2}
+  - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 24040cb7a5f9e8c4fb913fbcc1e7c3b9, type: 2}
