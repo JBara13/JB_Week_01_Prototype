@@ -41,6 +41,7 @@ public class NPCBrain : ScriptableObject
         isConsequence = false;
         playerReputation = 50f;
         isLoseEncounter = false;
+        encounterHistory.Clear();
     }
 
     public void ConsequenceDelivered()

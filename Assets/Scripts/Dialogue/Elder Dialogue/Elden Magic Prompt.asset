@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue: 'Hello, Your Highness. Some people have asked me to practice my elden
     magic to help them with their problems. Would you allow me to do that?
 
-    
+
 
 '
   yesResponse: "Oh alright, I\u2019ll try to help them out as best as I can then.\r\n\r\n"
@@ -24,7 +24,7 @@ MonoBehaviour:
   idkResponse: "Ugh\u2026 In that case, if they keep this up, I\u2019ll have to do
     it so that they leave me alone. \r\n\r\n"
   hasEncountered: 0
-  hasConsequence: 0
+  hasConsequence: 1
   isCompleted: 0
   yesEffectsList:
   - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}

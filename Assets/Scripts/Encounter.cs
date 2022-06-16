@@ -25,8 +25,8 @@ public class Encounter : MonoBehaviour
     public bool encountering, playerHasResponded, displayTurnsRemaining;
     public bool gameOver;
 
-    public float endEncounterTimer, turnsRemainingDisplayTimer, gameOverTimer;
-    private float endEncounterTimerReset, turnsRemainingDisplayTimerReset;
+    public float endEncounterTimer, turnsRemainingDisplayTimer, gameOverTimer, consequenceTimer;
+    private float endEncounterTimerReset, turnsRemainingDisplayTimerReset, consequenceTimerReset;
 
     private ReputationMenu reputation;
 
@@ -62,7 +62,7 @@ public class Encounter : MonoBehaviour
         }
 
         endEncounterTimerReset = endEncounterTimer;
-        responseTimerBar.maxValue = endEncounterTimerReset;
+        consequenceTimerReset = consequenceTimer;
         turnsRemainingDisplayTimerReset = turnsRemainingDisplayTimer;
 
 
@@ -84,17 +84,33 @@ public class Encounter : MonoBehaviour
 
             EncounterNPC();
         }
-        
-        if (encountering && !playerHasResponded)
+
+        if (!currentEncounter.isConsequence)
         {
-            AwaitPlayerResponse();
+            responseTimerBar.maxValue = endEncounterTimerReset;
+
+            if (encountering && !playerHasResponded)
+            {
+                AwaitPlayerResponse();
+            }
+            else
+            {
+                responseTimerBar.value = endEncounterTimer;
+                endEncounterTimer -= Time.deltaTime;
+
+                if (endEncounterTimer <= 0f)
+                {
+                    EndEncounter();
+                }
+            }
         }
         else
         {
-            responseTimerBar.value = endEncounterTimer;
-            endEncounterTimer -= Time.deltaTime;
+            responseTimerBar.maxValue = consequenceTimerReset;
+            responseTimerBar.value = consequenceTimer;
+            consequenceTimer -= Time.deltaTime;
 
-            if (endEncounterTimer <= 0f)
+            if (consequenceTimer <= 0f)
             {
                 EndEncounter();
             }
@@ -249,6 +265,11 @@ public class Encounter : MonoBehaviour
             {
                 effect.npc.playerReputation += effect.reputationEffect;
             }
+
+            int r = Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList.Count);
+            consequenceEncounter = currentEncounter.chosenDialogue.yesEffectsList[r].npc;
+            consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList.Count)];
+            consequenceEncounter.isConsequence = true;
         }
     }
 
@@ -262,6 +283,11 @@ public class Encounter : MonoBehaviour
             {
                 effect.npc.playerReputation += effect.reputationEffect;
             }
+
+            int r = Random.Range(0, currentEncounter.chosenDialogue.noEffectsList.Count);
+            consequenceEncounter = currentEncounter.chosenDialogue.noEffectsList[r].npc;
+            consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.noEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.noEffectsList[r].consequenceDialogueList.Count)];
+            consequenceEncounter.isConsequence = true;
         }
     }
 
@@ -275,6 +301,11 @@ public class Encounter : MonoBehaviour
             {
                 effect.npc.playerReputation += effect.reputationEffect;
             }
+
+            int r = Random.Range(0, currentEncounter.chosenDialogue.idkEffectsList.Count);
+            consequenceEncounter = currentEncounter.chosenDialogue.idkEffectsList[r].npc;
+            consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.idkEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.idkEffectsList[r].consequenceDialogueList.Count)];
+            consequenceEncounter.isConsequence = true;
         }
     }
 
@@ -305,12 +336,8 @@ public class Encounter : MonoBehaviour
             //consequenceEncounter.isConsequence = true;
             //consequenceEncounter.chosenDialogue = currentEncounter.consequenceDialogue;
 
-
-            int r = Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList.Count);
-            consequenceEncounter = currentEncounter.chosenDialogue.yesEffectsList[r].npc;
             currentEncounterHistory.consequenceNPC = consequenceEncounter;
-            consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList.Count)];
-            consequenceEncounter.isConsequence = true;
+            
             //consequenceEncounter.playerResponseString = playerResponse;
 
             //encounterQueue.Enqueue(consequenceEncounter);
@@ -319,6 +346,7 @@ public class Encounter : MonoBehaviour
             ResetResponse();
 
             encounterQueue.RemoveFirst();
+            //encounterQueue.AddFirst(consequenceEncounter);
             encounterQueue.AddAfter(encounterQueue.First, consequenceEncounter);
 
             //encounterQueue.Dequeue();
@@ -338,6 +366,7 @@ public class Encounter : MonoBehaviour
         //reputation.UpdateNPCProfiles();
 
         endEncounterTimer = endEncounterTimerReset;
+        consequenceTimer = consequenceTimerReset;
 
         turnsRemaining--;
 

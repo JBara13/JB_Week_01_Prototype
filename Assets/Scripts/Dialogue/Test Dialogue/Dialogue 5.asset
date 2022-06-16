@@ -38,7 +38,7 @@ MonoBehaviour:
     consequenceDialogueList:
     - {fileID: 11400000, guid: 38d1b423522a2f24f8ce3147901dd9db, type: 2}
   - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
-    reputationEffect: -26
+    reputationEffect: -10
     consequenceDialogueList:
     - {fileID: 11400000, guid: 38d1b423522a2f24f8ce3147901dd9db, type: 2}
   - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
