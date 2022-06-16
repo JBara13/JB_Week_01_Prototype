@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: No Consequence 1
+  m_Name: Yes Consequence 5
   m_EditorClassIdentifier: 
-  dialogue: no consequence
+  dialogue: We stopped them and no one was injured, nor any casualties. The citizens
+    thank you for sending us out as soon as we heard. Praise our Great Ruler!
   yesResponse: 
   noResponse: 
   idkResponse: 
   hasEncountered: 0
   hasConsequence: 0
-  isCompleted: 1
+  isCompleted: 0
   yesEffectsList: []
   noEffectsList: []
   idkEffectsList: []

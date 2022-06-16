@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
   m_Name: Dialogue 3
   m_EditorClassIdentifier: 
-  dialogue: Dialogue Text 3
-  yesResponse: yes response
-  noResponse: no response
-  idkResponse: idk response
+  dialogue: "Your Highness! I am feeling sooooooo jittery toooooday! Allow me toooo
+    put ooooon a shoooooow fooooor the people oooof the kingdooooom! It will be fantastic!\r"
+  yesResponse: "HOOOOOOORAY!!\r\nThank yoooou!\r\nI will get this show started real
+    sooooooon!\r"
+  noResponse: "Oh\u2026 I was looking forward to it too. Whatever you desire, Your
+    Highness.\r"
+  idkResponse: 'Oh? I guess we should maybe schedule it for another time then. '
   hasEncountered: 0
   hasConsequence: 1
   isCompleted: 0

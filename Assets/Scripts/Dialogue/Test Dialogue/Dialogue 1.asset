@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
   m_Name: Dialogue 1
   m_EditorClassIdentifier: 
-  dialogue: Dialogue Text 1
-  yesResponse: yes response
-  noResponse: no response
-  idkResponse: idk response
+  dialogue: Heyo, Your Highness! Surely you just let me steal from the wealthier
+    people of the kingdom to give to the poor! It'll be great to see those snobs
+    cry. The poor needs it.
+  yesResponse: Alright! I won't let you down! *whispering* all according to plan...
+  noResponse: "Darn it all! I really thought if I could help the poor at the same
+    time, it'd be okay!\t"
+  idkResponse: Hmmm... In that case, I'll leave them alone... Hehe...
   hasEncountered: 0
   hasConsequence: 1
   isCompleted: 0

@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
   m_Name: Dialogue 4
   m_EditorClassIdentifier: 
-  dialogue: Dialogue Text 4
-  yesResponse: yes response
-  noResponse: no response
-  idkResponse: idk response
+  dialogue: "Hello, Your Highness. I have made some food for the people in the dungeon,
+    they must be starving. Shall I bring it down to them?\t"
+  yesResponse: "Thank you for letting me do this. They deserve to at least eat and
+    survive.\t"
+  noResponse: "Really? But they're human too! Tyrant...\t"
+  idkResponse: I'll leave them with the guards. I guess they can decide what to do
+    with it.
   hasEncountered: 0
   hasConsequence: 1
   isCompleted: 0

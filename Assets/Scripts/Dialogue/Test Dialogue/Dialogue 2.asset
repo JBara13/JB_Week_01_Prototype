@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
   m_Name: Dialogue 2
   m_EditorClassIdentifier: 
-  dialogue: Dialogue Text 2
-  yesResponse: yes response
-  noResponse: no response
-  idkResponse: idk response
+  dialogue: "Hello, Your Highness. Some people have asked me to practice my elden
+    magic to help them with their problems. Would you allow me to do that?\r"
+  yesResponse: "Oh alright, I\u2019ll try to help them out as best as I can then.\r"
+  noResponse: "Oh thank goodness, My magic is cursed. I didn\u2019t think it would
+    be a good idea either. Thank you, Your Highness.\r"
+  idkResponse: "Ugh\u2026 In that case, if they keep this up, I\u2019ll have to do
+    it so that they leave me alone. \r"
   hasEncountered: 0
   hasConsequence: 1
   isCompleted: 0

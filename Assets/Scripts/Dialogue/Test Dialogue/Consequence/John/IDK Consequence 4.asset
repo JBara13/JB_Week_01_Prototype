@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
+  m_Name: IDK Consequence 4
+  m_EditorClassIdentifier: 
+  dialogue: The guards ate all the food I prepared for the prisoners. How could you
+    let them do that! You're not fit for a ruler of this land at all!
+  yesResponse: 
+  noResponse: 
+  idkResponse: 
+  hasEncountered: 0
+  hasConsequence: 0
+  isCompleted: 1
+  yesEffectsList: []
+  noEffectsList: []
+  idkEffectsList: []

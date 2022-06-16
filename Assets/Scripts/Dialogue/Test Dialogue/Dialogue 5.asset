@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
   m_Name: Dialogue 5
   m_EditorClassIdentifier: 
-  dialogue: Dialogue Text 5
-  yesResponse: yes response
-  noResponse: no response
-  idkResponse: idk response
+  dialogue: Your Highness! There are some drunk ruffians fighting in the local bar.
+    Shall I disband them?
+  yesResponse: "I will apprehend and seize them at once!\t"
+  noResponse: "They will cause mass havoc and worry for the citizens of the kingdom.
+    It will be unsettling, but as you wish.\t"
+  idkResponse: 'With all due respect, start knowing! Ah, I will send someone down
+    to stop them. '
   hasEncountered: 0
   hasConsequence: 1
   isCompleted: 0
