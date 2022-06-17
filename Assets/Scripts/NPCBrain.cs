@@ -6,6 +6,9 @@ using UnityEngine;
 public class NPCBrain : ScriptableObject
 {
     public string npcName;
+
+    [TextArea(3, 10)] // for inspector
+    public string npcAlignment;
     
     //public Sprite npcSprite;
 

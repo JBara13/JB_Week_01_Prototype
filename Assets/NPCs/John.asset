@@ -7,15 +7,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0de3534ebdc2af4ab67e727a32cf64a, type: 3}
-  m_Name: Jester
+  m_Name: John
   m_EditorClassIdentifier: 
-  npcName: Jester
-  spriteAnimation: {fileID: 11400000, guid: 8de4bd6f25d99c04585abb2f221f5f65, type: 2}
+  npcName: John
+  npcAlignment: 'Likes justice,
+
+    Dislikes cruelty'
+  spriteAnimation: {fileID: 11400000, guid: e18647233f088664d917e27278b75d2e, type: 2}
   dialogueOptions:
-  - {fileID: 11400000, guid: 20eedf257ba18c7409421281a0fa8c98, type: 2}
+  - {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
   chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
@@ -24,4 +27,4 @@ MonoBehaviour:
   isLoseEncounter: 0
   playerReputation: 50
   encounterHistory: []
-  loseScenarioText: You were killed by the Jester
+  loseScenarioText: You were killed by John
