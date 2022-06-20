@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0de3534ebdc2af4ab67e727a32cf64a, type: 3}
-  m_Name: Adventurer
+  m_Name: Barmaid
   m_EditorClassIdentifier: 
-  npcName: Adventurer
-  spriteAnimation: {fileID: 0}
+  npcName: Libby
+  npcAlignment: 
+  spriteAnimation: {fileID: 11400000, guid: 9e5c1ab92087e9e4d92bd3bac4d4b959, type: 2}
   dialogueOptions:
-  - {fileID: 0}
-  chosenDialogue: {fileID: 0}
+  - {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
+  chosenDialogue: {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
   consequenceDialogue: {fileID: 0}
-  loseDialogue: {fileID: 0}
+  loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 0
+  playerReputation: 50
   encounterHistory: []
   loseScenarioText: 

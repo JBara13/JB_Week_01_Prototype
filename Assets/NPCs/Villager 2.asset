@@ -7,33 +7,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0de3534ebdc2af4ab67e727a32cf64a, type: 3}
-  m_Name: Warrior
+  m_Name: Villager 2
   m_EditorClassIdentifier: 
-  npcName: Sir Stanley
-  npcAlignment: 'Likes fighting
-
-    Dislikes crime'
-  spriteAnimation: {fileID: 11400000, guid: 6cadfc599e9a6204caa41d57d6fba9af, type: 2}
+  npcName: Barry
+  npcAlignment: 
+  spriteAnimation: {fileID: 11400000, guid: 2a8bbd05e56a27142978651dd7b8367a, type: 2}
   dialogueOptions:
-  - {fileID: 11400000, guid: 3aa68fec98cc17043b714f272abbfd67, type: 2}
-  chosenDialogue: {fileID: 11400000, guid: 3aa68fec98cc17043b714f272abbfd67, type: 2}
+  - {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
+  chosenDialogue: {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 25
+  playerReputation: 50
   encounterHistory:
-  - dialogue: {fileID: 11400000, guid: 3aa68fec98cc17043b714f272abbfd67, type: 2}
-    playerResponse: idk
+  - dialogue: {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
+    playerResponse: yes
     affectedNPCs:
     - {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
     - {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
     - {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
     - {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
-    - {fileID: 11400000}
-    consequenceNPC: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
-  loseScenarioText: You were killed by the warrior
+    - {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+    consequenceNPC: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+  loseScenarioText: 

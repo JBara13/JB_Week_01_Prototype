@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0de3534ebdc2af4ab67e727a32cf64a, type: 3}
   m_Name: Elder
   m_EditorClassIdentifier: 
-  npcName: Elder
+  npcName: Elder JIm
   npcAlignment: 'Likes good manners,
 
     Dislikes the youth'
   spriteAnimation: {fileID: 11400000, guid: 6404d3081b8ecfe4b8f7e1c7586941ae, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
-  chosenDialogue: {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
+  chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 

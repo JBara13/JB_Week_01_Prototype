@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0cba747df2ac37048bcae95dd5642cbd, type: 3}
   - {fileID: 21300000, guid: f7c5de3d372c1f049aa874016d866320, type: 3}
   - {fileID: 21300000, guid: ae8e8388823e904489789b2f37c94f20, type: 3}
-  timePerFrameReset: 0.2
+  timePerFrameReset: 0.12

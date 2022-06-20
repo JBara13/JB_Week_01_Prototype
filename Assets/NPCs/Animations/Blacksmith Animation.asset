@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec08d1e46367e2a4fa76ca0c61ef539d, type: 3}
-  m_Name: JesterAnimation
+  m_Name: Blacksmith Animation
   m_EditorClassIdentifier: 
-  title: Jester Encounter
+  title: Blacksmith
   animationFrames:
-  - {fileID: 21300000, guid: a9d26be17704ddb4ab739896e4ec5458, type: 3}
-  - {fileID: 21300000, guid: 4672445976f0b784088d7199f7b1bafc, type: 3}
-  - {fileID: 21300000, guid: 733266ea9a3a2ae41a2d65feaf27efeb, type: 3}
-  - {fileID: 21300000, guid: 154401e7468763c4c8bae84c7c5348af, type: 3}
-  - {fileID: 21300000, guid: 75075422d1bad354aba46873be37d944, type: 3}
+  - {fileID: 21300000, guid: adb70923526e66044846dcf33a3da4d6, type: 3}
+  - {fileID: 21300000, guid: b9bb661800a981e4d97adb782b100872, type: 3}
+  - {fileID: 21300000, guid: d5b7d803031d91a448d0bf3da5716b7a, type: 3}
+  - {fileID: 21300000, guid: 8d9c5288755a97e4ca352289961cef03, type: 3}
+  - {fileID: 21300000, guid: ad842cfd138c6644e9db8c2cb9565398, type: 3}
   timePerFrameReset: 0.12

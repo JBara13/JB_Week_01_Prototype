@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec08d1e46367e2a4fa76ca0c61ef539d, type: 3}
-  m_Name: JesterAnimation
+  m_Name: KingAnimation
   m_EditorClassIdentifier: 
-  title: Jester Encounter
+  title: King
   animationFrames:
-  - {fileID: 21300000, guid: a9d26be17704ddb4ab739896e4ec5458, type: 3}
-  - {fileID: 21300000, guid: 4672445976f0b784088d7199f7b1bafc, type: 3}
-  - {fileID: 21300000, guid: 733266ea9a3a2ae41a2d65feaf27efeb, type: 3}
-  - {fileID: 21300000, guid: 154401e7468763c4c8bae84c7c5348af, type: 3}
-  - {fileID: 21300000, guid: 75075422d1bad354aba46873be37d944, type: 3}
+  - {fileID: 21300000, guid: 527195598fcf35e419b247ca6b2c8fa7, type: 3}
+  - {fileID: 21300000, guid: 55aded2e359b7744a9127ea5222e63dc, type: 3}
+  - {fileID: 21300000, guid: 8aeb57b26ad15e04bb893f1719ba1115, type: 3}
+  - {fileID: 21300000, guid: aca8936bc37a60449a3f192d55b179d2, type: 3}
+  - {fileID: 21300000, guid: fe70cf2c382ff384bb95a60a95270c2f, type: 3}
   timePerFrameReset: 0.12

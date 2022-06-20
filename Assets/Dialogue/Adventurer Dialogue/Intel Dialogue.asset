@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: Good day, Your Highness! I have intel that a secret organisation is forming
     a group just outside our city walls! Allow me to deal with them?
-  yesResponse: I shall handle them then! They shall dare not to do anything that
+  yesResponse: I shall handle them then! They shall not dare to do anything that
     will harm the kingdom and our people!
   noResponse: "Hmm\u2026 If you think that is for the best, then I shall leave it
     be.\r\n\r\n"
