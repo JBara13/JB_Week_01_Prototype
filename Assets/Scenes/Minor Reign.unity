@@ -225,17 +225,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potentialEncounterList:
+  - {fileID: 11400000, guid: 7003c44c33c51cc45824db9c8aaad436, type: 2}
   - {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
   - {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
-  - {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
-  - {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
-  - {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
-  - {fileID: 11400000, guid: 5ee288e14554f7a4eb10662107dd4ca0, type: 2}
-  - {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
   - {fileID: 11400000, guid: 1b1270dfb01094a4f9a43501749d0e0c, type: 2}
-  - {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
-  - {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
   - {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+  - {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+  - {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
   nextEncounterList: []
   queueArray: []
   currentEncounter: {fileID: 0}

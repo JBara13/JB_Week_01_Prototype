@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
+  m_Name: Witch 2
+  m_EditorClassIdentifier: 
+  dialogue: The moon is bright and right tonight for my ritual. Would you allow me
+    to sacrifice one soul in order for the ritual to succeed? I promise good fortune
+    for your journey ahead.
+  yesResponse: Thank you very much! May there be great luck and fortune in your future!
+  noResponse: I suppose I'll have to try again next time. Not sure when that'll be
+    though. *sighs*
+  idkResponse: Hmmm... Alright then. Thanks, I guess.
+  hasEncountered: 0
+  hasConsequence: 1
+  isCompleted: 0
+  yesEffectsList:
+  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+    reputationEffect: 15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: c20f7d0fcd8ff564cac18fbadf38b5ff, type: 2}
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 821788b4bb3a32e489729a1a46cf3b8e, type: 2}
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 4ac5f16f41c8b6742bd05ea77823bd87, type: 2}
+  - npc: {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 3836743e2bd275f49ba2f698bfab667f, type: 2}
+  - npc: {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 3836743e2bd275f49ba2f698bfab667f, type: 2}
+  noEffectsList:
+  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 4b6a56d8f93f31843a699ac2b22fed56, type: 2}
+  idkEffectsList:
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 99a7be52b8bea044e88b21bbce2877ba, type: 2}
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 4ac5f16f41c8b6742bd05ea77823bd87, type: 2}
+  - npc: {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 3836743e2bd275f49ba2f698bfab667f, type: 2}
+  - npc: {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 3836743e2bd275f49ba2f698bfab667f, type: 2}

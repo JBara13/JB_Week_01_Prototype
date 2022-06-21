@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
+  m_Name: Witch 1
+  m_EditorClassIdentifier: 
+  dialogue: 'I am working on a potion of fortune, but I need one more ingredient:
+    a hair from an heir. Can I have it?'
+  yesResponse: Excellent. The final ingredient! My potion will benefit this kingdom,
+    I swear it!
+  noResponse: Do you not trust me? I could improve this kingdom's fortune! You will
+    regret this
+  idkResponse: Such arrogance... You will regret this
+  hasEncountered: 0
+  hasConsequence: 1
+  isCompleted: 0
+  yesEffectsList:
+  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 405b1ef47edd0bc4c864dc0c269e5219, type: 2}
+  - npc: {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: acd0b0e3754d1d14db41f3a492262083, type: 2}
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: acd0b0e3754d1d14db41f3a492262083, type: 2}
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: acd0b0e3754d1d14db41f3a492262083, type: 2}
+  - npc: {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: acd0b0e3754d1d14db41f3a492262083, type: 2}
+  noEffectsList:
+  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 106e8c4561bdcde41bf2e888714989a6, type: 2}
+  - npc: {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5e3f78dce3802ce4b8a9bb488f97f61e, type: 2}
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5e3f78dce3802ce4b8a9bb488f97f61e, type: 2}
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5e3f78dce3802ce4b8a9bb488f97f61e, type: 2}
+  - npc: {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5e3f78dce3802ce4b8a9bb488f97f61e, type: 2}
+  idkEffectsList:
+  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 106e8c4561bdcde41bf2e888714989a6, type: 2}
+  - npc: {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5e3f78dce3802ce4b8a9bb488f97f61e, type: 2}
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5e3f78dce3802ce4b8a9bb488f97f61e, type: 2}
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5e3f78dce3802ce4b8a9bb488f97f61e, type: 2}
+  - npc: {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5e3f78dce3802ce4b8a9bb488f97f61e, type: 2}

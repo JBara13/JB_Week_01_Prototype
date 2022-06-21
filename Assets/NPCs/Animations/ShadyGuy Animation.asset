@@ -16,6 +16,8 @@ MonoBehaviour:
   animationFrames:
   - {fileID: 21300000, guid: bebff9a073e67d1459c76f77f24c5aab, type: 3}
   - {fileID: 21300000, guid: ad3349a09818fe946b461df22bc44bfd, type: 3}
+  - {fileID: 21300000, guid: b01870b7e19e13a4aaf831151fe81005, type: 3}
+  - {fileID: 21300000, guid: 0032ebf778e862c45ae43dde6e18b3b6, type: 3}
   - {fileID: 21300000, guid: 0032ebf778e862c45ae43dde6e18b3b6, type: 3}
   - {fileID: 21300000, guid: b01870b7e19e13a4aaf831151fe81005, type: 3}
   - {fileID: 21300000, guid: 8aebd22f13bb17b4a8edde41823a060d, type: 3}

@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0de3534ebdc2af4ab67e727a32cf64a, type: 3}
-  m_Name: Barmaid
+  m_Name: Executioner
   m_EditorClassIdentifier: 
-  npcName: Libby
+  npcName: Executioner
   npcAlignment: 
-  spriteAnimation: {fileID: 11400000, guid: 9e5c1ab92087e9e4d92bd3bac4d4b959, type: 2}
-  dialogueOptions: []
-  chosenDialogue: {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
+  spriteAnimation: {fileID: 11400000, guid: b864a388a56b3e347a6a520f43a2e816, type: 2}
+  dialogueOptions:
+  - {fileID: 11400000, guid: b6d225a82114b364faf1f961a4bfbef7, type: 2}
+  - {fileID: 11400000, guid: 53b9e9afab80c9d45b99ff2f5a6d3fc3, type: 2}
+  - {fileID: 11400000, guid: 412d8a90210b0bf438f1000319c80d53, type: 2}
+  chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
-  loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
+  loseDialogue: {fileID: 0}
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 50
+  playerReputation: 0
   encounterHistory: []
-  loseScenarioText: 
+  loseScenarioText: You have been executed.
