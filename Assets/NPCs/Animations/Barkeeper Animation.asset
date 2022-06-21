@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec08d1e46367e2a4fa76ca0c61ef539d, type: 3}
-  m_Name: John Animation
+  m_Name: Barkeeper Animation
   m_EditorClassIdentifier: 
-  title: John Encounter
+  title: Barkeeper Encounter
   animationFrames:
   - {fileID: 21300000, guid: 30d5856fad0df014abb95b833d0a3ed5, type: 3}
   - {fileID: 21300000, guid: d1b71ae5efe2b29459fe3ef17223d012, type: 3}

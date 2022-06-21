@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: Merchant 2 Yes General
+  m_Name: Elder Yes
   m_EditorClassIdentifier: 
-  dialogue: That elixir tasted horrible AND gave me a rash! How could you let this
-    happen?
+  dialogue: These scrolls go into so much detail. They shall keep me occupied for
+    hours! Huzzah!
   yesResponse: 
   noResponse: 
   idkResponse: 

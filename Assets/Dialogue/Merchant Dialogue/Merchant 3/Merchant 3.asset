@@ -12,13 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
   m_Name: Merchant 3
   m_EditorClassIdentifier: 
-  dialogue: 
-  yesResponse: 
-  noResponse: 
-  idkResponse: 
+  dialogue: 'Greetings! I have returned with tales and scrolls from an exotic land!
+    Will you allow me to sell my wares? '
+  yesResponse: Your kingdom will flourish with new knowledge!
+  noResponse: Oh.. Uh yes, of course. I will return on my travels to find something
+    you won't be able to refuse!
+  idkResponse: Well, you didn't say no...
   hasEncountered: 0
-  hasConsequence: 0
+  hasConsequence: 1
   isCompleted: 0
-  yesEffectsList: []
-  noEffectsList: []
-  idkEffectsList: []
+  yesEffectsList:
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5f760125fdcafb747910b59ba0d85169, type: 2}
+  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 6e24021d45a5d7945be17a51ace62db6, type: 2}
+  noEffectsList:
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: b8083147d30ea35479df4cbbd5c5a245, type: 2}
+  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: bfdfc77859bf35046a7923c9e018a446, type: 2}
+  idkEffectsList:
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5f760125fdcafb747910b59ba0d85169, type: 2}
+  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 6e24021d45a5d7945be17a51ace62db6, type: 2}

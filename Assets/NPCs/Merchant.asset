@@ -17,6 +17,10 @@ MonoBehaviour:
   spriteAnimation: {fileID: 11400000, guid: 020849f1a386cbf45802ef91cbf3ffce, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: 21bc8b487467b004e96e0cb108614dc4, type: 2}
+  - {fileID: 11400000, guid: 13cd9314cb7627041844659de6f0c834, type: 2}
+  - {fileID: 11400000, guid: 9b2effbbaf6d44149b64bc7969502cd9, type: 2}
+  - {fileID: 11400000, guid: 8c54340b961ec604e9ddb654ec499d4c, type: 2}
+  - {fileID: 11400000, guid: 20984fe425465ac499160be5870ec174, type: 2}
   chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}

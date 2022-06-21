@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: Merchant 2 Yes Warrior
+  m_Name: General Yes
   m_EditorClassIdentifier: 
-  dialogue: 
+  dialogue: Those new spices taste amazing! The tavern has been packed all week!
   yesResponse: 
   noResponse: 
   idkResponse: 

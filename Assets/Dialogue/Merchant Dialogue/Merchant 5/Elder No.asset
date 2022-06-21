@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
-  m_Name: Merchant 2 Yes General
+  m_Name: Elder No
   m_EditorClassIdentifier: 
-  dialogue: That elixir tasted horrible AND gave me a rash! How could you let this
-    happen?
+  dialogue: You were wise to decline the merchant. In my experiene bottled fire does
+    more harm than good.
   yesResponse: 
   noResponse: 
   idkResponse: 
