@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
+  m_Name: Bar 1
+  m_EditorClassIdentifier: 
+  dialogue: Your highness, I have acquired a foreign ale which is supposed to make
+    the drinker feel invincible. Will you allow me to serve it at my bar?
+  yesResponse: The warriors shall be a force to be reckoned with!
+  noResponse: 'You''re right, it may be too dangerous '
+  idkResponse: Oh.. I take it you don't care..
+  hasEncountered: 0
+  hasConsequence: 1
+  isCompleted: 0
+  yesEffectsList:
+  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: 20
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 802ab1df8ba3d7448a27407753ce6406, type: 2}
+  - npc: {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 29bc2c9fb6dd0914aa571cd9e078a2b5, type: 2}
+  - npc: {fileID: 11400000, guid: 5ee288e14554f7a4eb10662107dd4ca0, type: 2}
+    reputationEffect: -15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: e6890cb897f32af4488a46bf8ff16a0e, type: 2}
+  - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+    reputationEffect: 15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 979408d4bdbbeea4ea1189c0d2300ed1, type: 2}
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: 15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: ba5f8e5e556be7545bc274cc410139a3, type: 2}
+  - npc: {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
+    reputationEffect: 15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 859c8188e7c2660479af32bb35509f9c, type: 2}
+  noEffectsList:
+  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: b92fa0d345a0fb742a9531e560e45912, type: 2}
+  idkEffectsList:
+  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 9e5d7c398133f684cbe85720d2373180, type: 2}

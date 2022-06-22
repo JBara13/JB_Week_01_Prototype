@@ -16,7 +16,7 @@ public class NPCBrain : ScriptableObject
 
     //public Encounter encounter;
 
-    public List<DialogueSystem> dialogueOptions;
+    public List<DialogueSystem> dialogueOptions, dialoguePool;
 
     public DialogueSystem chosenDialogue, consequenceDialogue, loseDialogue;
 
@@ -50,5 +50,11 @@ public class NPCBrain : ScriptableObject
     public void ConsequenceDelivered()
     {
         isConsequence = false;
+    }
+
+    public void ResetDialogue()
+    {
+        dialogueOptions.Clear();
+        dialogueOptions.AddRange(dialoguePool);
     }
 }

@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0de3534ebdc2af4ab67e727a32cf64a, type: 3}
   m_Name: Black Smith
   m_EditorClassIdentifier: 
-  npcName: Bronson Smith
+  npcName: Blacksmith
   npcAlignment: 
   spriteAnimation: {fileID: 11400000, guid: 8911cc7fb42e4fc48990bcee6a8f5a3f, type: 2}
   dialogueOptions: []
-  chosenDialogue: {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
+  dialoguePool: []
+  chosenDialogue: {fileID: 11400000, guid: e1a906dd2ac2539429472c5b66aadadb, type: 2}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 15
+  playerReputation: 120
   encounterHistory:
   - dialogue: {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
     playerResponse: yes

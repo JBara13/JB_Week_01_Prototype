@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: Barkeeper
   m_EditorClassIdentifier: 
   npcName: Barkeeper
-  npcAlignment: 'Likes justice,
+  npcAlignment: 'Likes slingin'' cold ones
 
-    Dislikes cruelty'
+    Doesn''t like'
   spriteAnimation: {fileID: 11400000, guid: e18647233f088664d917e27278b75d2e, type: 2}
   dialogueOptions:
-  - {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
+  - {fileID: 11400000, guid: cac92ea846f70d347a21f981ed96b44f, type: 2}
+  - {fileID: 11400000, guid: 6dc04deea25ed5847a8431c924f35f18, type: 2}
+  - {fileID: 11400000, guid: dab42658fd3bd5a4cae6a65a510a1bcb, type: 2}
+  dialoguePool:
+  - {fileID: 11400000, guid: cac92ea846f70d347a21f981ed96b44f, type: 2}
+  - {fileID: 11400000, guid: 6dc04deea25ed5847a8431c924f35f18, type: 2}
+  - {fileID: 11400000, guid: dab42658fd3bd5a4cae6a65a510a1bcb, type: 2}
   chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}

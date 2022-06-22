@@ -27,7 +27,7 @@ public class Encounter : MonoBehaviour
     public string playerResponse;
 
     public bool encountering, playerHasResponded, displayTurnsRemaining;
-    public bool gameOver;
+    public bool gameOver, gameWon;
 
     public float turnsRemainingDisplayTimer;
     private float turnsRemainingDisplayTimerReset;
@@ -51,6 +51,7 @@ public class Encounter : MonoBehaviour
         foreach (NPCBrain npc in potentialEncounterList)
         {
             npc.ResetNPCChoices();
+            npc.ResetDialogue();
         }
 
         encounterQueue = new LinkedList<NPCBrain>();
@@ -239,9 +240,19 @@ public class Encounter : MonoBehaviour
         //}
 
 
-        if (!currentEncounter.isConsequence && !currentEncounter.isLoseEncounter)
+        if (!currentEncounter.isConsequence && !currentEncounter.isLoseEncounter && !gameWon)
         {
-            currentEncounter.ChooseDialogue();
+            if (currentEncounter.dialogueOptions.Count > 0)
+            {
+                currentEncounter.ChooseDialogue();
+            }
+            else
+            {
+                Debug.Log(currentEncounter.name + " is out of things to ask, skipping");
+
+                encounterQueue.RemoveFirst();
+                encountering = false;
+            }
             npcUIText.text = currentEncounter.chosenDialogue.dialogue;
 
             respondingText.text = "Inquiring";
@@ -395,6 +406,16 @@ public class Encounter : MonoBehaviour
             
             currentEncounter.encounterHistory.Add(currentEncounterHistory);
 
+            foreach (NPCBrain npc in potentialEncounterList)
+            {
+                if (npc.dialogueOptions.Contains(currentEncounter.chosenDialogue))
+                {
+                    npc.dialogueOptions.Remove(currentEncounter.chosenDialogue);
+
+                }
+            }
+
+
             consequenceEncounter.isConsequence = true;
 
             encounterQueue.RemoveFirst();
@@ -418,7 +439,14 @@ public class Encounter : MonoBehaviour
         }
         else
         {
-            currentEncounter.chosenDialogue.isCompleted = true;
+            foreach (NPCBrain npc in potentialEncounterList)
+            {
+                if (npc.dialogueOptions.Contains(currentEncounter.chosenDialogue))
+                {
+                    npc.dialogueOptions.Remove(currentEncounter.chosenDialogue);
+
+                }
+            }
 
             currentEncounter.ConsequenceDelivered();
 
@@ -432,9 +460,10 @@ public class Encounter : MonoBehaviour
         nextButton.SetActive(false);
         playerAnswerPanel.SetActive(true);
 
-        if (turnsRemaining <= 0)
+        if (turnsRemaining <= 0 && !encounterQueue.First.Value.isConsequence)
         {
             //player wins
+            gameWon = true;
             gameOverPanel.SetActive(true);
             playerAnswerPanel.SetActive(false);
             turnsRemainingUI.enabled = false;

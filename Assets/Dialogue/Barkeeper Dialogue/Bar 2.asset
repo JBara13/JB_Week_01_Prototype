@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
+  m_Name: Bar 2
+  m_EditorClassIdentifier: 
+  dialogue: Your knights keep starting fights in my tavern! Please, I beg you! put
+    a stop to it!
+  yesResponse: Thank you king! I don't know how many more chairs I can afford to
+    replace!
+  noResponse: Please! They keep breaking my chairs! It's gonna send me broke!
+  idkResponse: Please! They keep breaking my tables! It's gonna send me broke!
+  hasEncountered: 0
+  hasConsequence: 1
+  isCompleted: 0
+  yesEffectsList:
+  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: 20
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 18b1ce3d24671644aa73c7502680a9c1, type: 2}
+  - npc: {fileID: 11400000, guid: 5ee288e14554f7a4eb10662107dd4ca0, type: 2}
+    reputationEffect: 15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 3a984d4150171c64e8d7fdbb23d95539, type: 2}
+  - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: a865350fe7b0ae44e9ef765dc8c7a406, type: 2}
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: 15
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: f20744339668f984087e608460ecb522, type: 2}
+  - npc: {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: d40bbd8474e362a45b00623633c1a40e, type: 2}
+  noEffectsList:
+  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 227f951520e20d04482ceedf5fd2f971, type: 2}
+  - npc: {fileID: 11400000, guid: 5ee288e14554f7a4eb10662107dd4ca0, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 4218434409f1205469f763b34e64f114, type: 2}
+  - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 1daa0d1c26bf0444aa57ac3148887433, type: 2}
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 4eb13d84a115fa04f9efc5f8628a4e4e, type: 2}
+  - npc: {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5cdd93456b6f70845bb6b0b97c49400c, type: 2}
+  idkEffectsList:
+  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 227f951520e20d04482ceedf5fd2f971, type: 2}
+  - npc: {fileID: 11400000, guid: 5ee288e14554f7a4eb10662107dd4ca0, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 4218434409f1205469f763b34e64f114, type: 2}
+  - npc: {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+    reputationEffect: 10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 1daa0d1c26bf0444aa57ac3148887433, type: 2}
+  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 4eb13d84a115fa04f9efc5f8628a4e4e, type: 2}
+  - npc: {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList:
+    - {fileID: 11400000, guid: 5cdd93456b6f70845bb6b0b97c49400c, type: 2}

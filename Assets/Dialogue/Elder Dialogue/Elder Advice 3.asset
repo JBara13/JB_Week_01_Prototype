@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa2ceba9d6af3940aeed7f43b72b2ce, type: 3}
+  m_Name: Elder Advice 3
+  m_EditorClassIdentifier: 
+  dialogue: I would like to offer you my wisdom, will you hear it?
+  yesResponse: Most people react well to kindness, but some people require a sterner
+    approach
+  noResponse: Ah.. I figured
+  idkResponse: You're a lot like me when I was younger... An arrogant fool.
+  hasEncountered: 0
+  hasConsequence: 0
+  isCompleted: 0
+  yesEffectsList:
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: 5
+    consequenceDialogueList: []
+  noEffectsList:
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: -5
+    consequenceDialogueList: []
+  idkEffectsList:
+  - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+    reputationEffect: -10
+    consequenceDialogueList: []

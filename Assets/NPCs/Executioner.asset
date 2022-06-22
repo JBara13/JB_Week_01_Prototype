@@ -19,6 +19,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b6d225a82114b364faf1f961a4bfbef7, type: 2}
   - {fileID: 11400000, guid: 53b9e9afab80c9d45b99ff2f5a6d3fc3, type: 2}
   - {fileID: 11400000, guid: 412d8a90210b0bf438f1000319c80d53, type: 2}
+  dialoguePool:
+  - {fileID: 11400000, guid: b6d225a82114b364faf1f961a4bfbef7, type: 2}
+  - {fileID: 11400000, guid: 53b9e9afab80c9d45b99ff2f5a6d3fc3, type: 2}
+  - {fileID: 11400000, guid: 412d8a90210b0bf438f1000319c80d53, type: 2}
   chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 0}

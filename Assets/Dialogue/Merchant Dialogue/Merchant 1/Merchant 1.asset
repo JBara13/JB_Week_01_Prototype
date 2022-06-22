@@ -63,19 +63,7 @@ MonoBehaviour:
     reputationEffect: -5
     consequenceDialogueList:
     - {fileID: 11400000, guid: 9dfc369742614f047a6450835ea9d06e, type: 2}
-  - npc: {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
-    reputationEffect: -5
-    consequenceDialogueList:
-    - {fileID: 11400000, guid: 9dfc369742614f047a6450835ea9d06e, type: 2}
   - npc: {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
-    reputationEffect: -5
-    consequenceDialogueList:
-    - {fileID: 11400000, guid: 9dfc369742614f047a6450835ea9d06e, type: 2}
-  - npc: {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
-    reputationEffect: -5
-    consequenceDialogueList:
-    - {fileID: 11400000, guid: 9dfc369742614f047a6450835ea9d06e, type: 2}
-  - npc: {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
     reputationEffect: -5
     consequenceDialogueList:
     - {fileID: 11400000, guid: 9dfc369742614f047a6450835ea9d06e, type: 2}
