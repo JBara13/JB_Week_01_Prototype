@@ -227,8 +227,22 @@ public class Encounter : MonoBehaviour
         }
 
         //currentEncounter = encounterQueue.Peek();
-        currentEncounter = encounterQueue.First.Value;
+        if (encounterQueue.First.Value != null)
+        {
+            currentEncounter = encounterQueue.First.Value;
+        }
+        else
+        {
+            for (int i = 0; i < queueLength; i++)
+            {
+                if (encounterQueue.Count >= 1f)
+                {
+                    SetNextEncounter();
+                }
 
+                encounterQueue.AddLast(FillEncounterQueue());
+            }
+        }
         //npcSpriteRenderer.sprite = currentEncounter.npcSprite;
         uiAnimator.uiAnimation = currentEncounter.spriteAnimation;
         npcNameText.text = currentEncounter.npcName;
