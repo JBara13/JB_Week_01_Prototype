@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Barkeeper
   m_EditorClassIdentifier: 
   npcName: Barkeeper
-  npcAlignment: 'Likes slingin'' cold ones
+  npcAlignment: '- Likes his bar
 
-    Doesn''t like'
+    - Dislikes injustice'
   spriteAnimation: {fileID: 11400000, guid: e18647233f088664d917e27278b75d2e, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: cac92ea846f70d347a21f981ed96b44f, type: 2}
@@ -33,4 +33,4 @@ MonoBehaviour:
   isLoseEncounter: 0
   playerReputation: 50
   encounterHistory: []
-  loseScenarioText: You were killed by John
+  loseScenarioText: You were glassed by the barkeeper

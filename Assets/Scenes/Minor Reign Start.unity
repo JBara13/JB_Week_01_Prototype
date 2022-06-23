@@ -2226,7 +2226,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1717007369}
-  - {fileID: 986169261}
   - {fileID: 1160287757}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2358,12 +2357,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 538728147}
-  m_RootOrder: 1
+  m_Father: {fileID: 1717007369}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9981427, y: 270}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1153.3, y: 190.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986169262
@@ -2551,7 +2550,7 @@ RectTransform:
   m_Children:
   - {fileID: 31313259}
   m_Father: {fileID: 538728147}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3006,12 +3005,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1717007369}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0074317, y: -83}
-  m_SizeDelta: {x: 1020.7, y: 262.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1020.7, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537776260
 MonoBehaviour:
@@ -3033,8 +3032,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Answer the Question prompts with either a Yes, No, or I don't know answer.
-    Each answer will have an instant effect of your kingdom's happiness. Choose wisely.
+  m_text: "Your goal is to leave a strong legacy.\n\nListen to the people's questions
+    and answer with a yes, no or dismissive answer. \n\nYour choices make an impact
+    on your reputation as king, and there will be consequences.\n\nPlant your name
+    in the history books, be assassinated, or be forgotten.\n\n It's all up to you."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77dc242f5ad55534b9ec249a925e3eed, type: 2}
   m_sharedMaterial: {fileID: 2697282201096207866, guid: 77dc242f5ad55534b9ec249a925e3eed, type: 2}
@@ -3061,7 +3062,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.1
+  m_fontSize: 32.35
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3122,6 +3123,8 @@ GameObject:
   - component: {fileID: 1717007369}
   - component: {fileID: 1717007371}
   - component: {fileID: 1717007370}
+  - component: {fileID: 1717007373}
+  - component: {fileID: 1717007372}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3141,6 +3144,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 986169261}
   - {fileID: 1537776259}
   m_Father: {fileID: 538728147}
   m_RootOrder: 0
@@ -3148,7 +3152,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2.998993, y: 111.028}
-  m_SizeDelta: {x: 1220.45, y: 660.932}
+  m_SizeDelta: {x: 0, y: 745.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717007370
 MonoBehaviour:
@@ -3188,6 +3192,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717007368}
   m_CullTransparentMesh: 1
+--- !u!114 &1717007372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717007368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
+--- !u!114 &1717007373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717007368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 25
+    m_Right: 25
+    m_Top: 25
+    m_Bottom: 25
+  m_ChildAlignment: 4
+  m_Spacing: -77.8
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 1
+  m_ReverseArrangement: 0
 --- !u!1 &1905114927
 GameObject:
   m_ObjectHideFlags: 0

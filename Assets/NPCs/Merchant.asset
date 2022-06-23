@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Merchant
   m_EditorClassIdentifier: 
   npcName: Merchant
-  npcAlignment: 
+  npcAlignment: '- Likes making money
+
+    - Dislikes thieves'
   spriteAnimation: {fileID: 11400000, guid: 020849f1a386cbf45802ef91cbf3ffce, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: 21bc8b487467b004e96e0cb108614dc4, type: 2}

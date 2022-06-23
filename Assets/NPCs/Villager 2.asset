@@ -13,16 +13,18 @@ MonoBehaviour:
   m_Name: Villager 2
   m_EditorClassIdentifier: 
   npcName: Drunk
-  npcAlignment: 
+  npcAlignment: '- Likes drinking
+
+    - Dislikes responsibility'
   spriteAnimation: {fileID: 11400000, guid: 2a8bbd05e56a27142978651dd7b8367a, type: 2}
   dialogueOptions: []
   dialoguePool: []
-  chosenDialogue: {fileID: 11400000, guid: 6a3b79f25e7da044687621d116d38ae9, type: 2}
+  chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 85
+  playerReputation: 50
   encounterHistory: []
-  loseScenarioText: 
+  loseScenarioText: The drunk has bested you

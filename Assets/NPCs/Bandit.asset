@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Bandit
   m_EditorClassIdentifier: 
   npcName: Bandit
-  npcAlignment: 'Enjoys crime and chaos
+  npcAlignment: '- Likes stealing
 
-    Dislikes rules'
+    - Dislikes justice'
   spriteAnimation: {fileID: 11400000, guid: 517801af6ba28374285f8b67bc5a116f, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: a9f07639adfd5884d85706d8c21d9caa, type: 2}
@@ -29,4 +29,4 @@ MonoBehaviour:
   isLoseEncounter: 0
   playerReputation: 50
   encounterHistory: []
-  loseScenarioText: You were killed by the bandit
+  loseScenarioText: You were assassinated by the bandit

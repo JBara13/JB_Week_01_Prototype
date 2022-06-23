@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Barmaid
   m_EditorClassIdentifier: 
   npcName: Barmaid
-  npcAlignment: 
+  npcAlignment: '- Likes serving drinks
+
+    - Dislikes rude customers'
   spriteAnimation: {fileID: 11400000, guid: 9e5c1ab92087e9e4d92bd3bac4d4b959, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: 6dc04deea25ed5847a8431c924f35f18, type: 2}
@@ -25,6 +27,6 @@ MonoBehaviour:
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 45
+  playerReputation: 50
   encounterHistory: []
-  loseScenarioText: 
+  loseScenarioText: The barmaid has defeated you

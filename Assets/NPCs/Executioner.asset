@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Executioner
   m_EditorClassIdentifier: 
   npcName: Executioner
-  npcAlignment: 
+  npcAlignment: '- Likes executing
+
+    - Dislikes being told not to execute'
   spriteAnimation: {fileID: 11400000, guid: b864a388a56b3e347a6a520f43a2e816, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: b6d225a82114b364faf1f961a4bfbef7, type: 2}
@@ -29,6 +31,6 @@ MonoBehaviour:
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 0
+  playerReputation: 50
   encounterHistory: []
   loseScenarioText: You have been executed.

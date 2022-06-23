@@ -13,25 +13,18 @@ MonoBehaviour:
   m_Name: Black Smith
   m_EditorClassIdentifier: 
   npcName: Blacksmith
-  npcAlignment: 
+  npcAlignment: '- Likes making weapons
+
+    - Dislikes not working'
   spriteAnimation: {fileID: 11400000, guid: 8911cc7fb42e4fc48990bcee6a8f5a3f, type: 2}
   dialogueOptions: []
   dialoguePool: []
-  chosenDialogue: {fileID: 11400000, guid: e1a906dd2ac2539429472c5b66aadadb, type: 2}
+  chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 120
-  encounterHistory:
-  - dialogue: {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
-    playerResponse: yes
-    affectedNPCs:
-    - {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
-    - {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
-    - {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
-    - {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
-    - {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
-    consequenceNPC: {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
-  loseScenarioText: 
+  playerReputation: 50
+  encounterHistory: []
+  loseScenarioText: You were been bludgeoned by the blacksmith

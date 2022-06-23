@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: Elder
   m_EditorClassIdentifier: 
   npcName: Elder
-  npcAlignment: 'Likes good manners,
+  npcAlignment: '- Likes good manners
 
-    Dislikes the youth'
+    - Dislikes using magic'
   spriteAnimation: {fileID: 11400000, guid: 6404d3081b8ecfe4b8f7e1c7586941ae, type: 2}
   dialogueOptions:
+  - {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
+  - {fileID: 11400000, guid: 6dc04deea25ed5847a8431c924f35f18, type: 2}
   - {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
-  - {fileID: 11400000, guid: 20e7bab4112362749bc6e5e65532bc42, type: 2}
-  - {fileID: 11400000, guid: 4aed30dcdb028b5489d0cdac9d46795e, type: 2}
   dialoguePool:
   - {fileID: 11400000, guid: 033d7fd27d9d8384f809782af4da65a7, type: 2}
   - {fileID: 11400000, guid: 6dc04deea25ed5847a8431c924f35f18, type: 2}
   - {fileID: 11400000, guid: 4c88f37285d71aa438ee90a3111b8c96, type: 2}
-  chosenDialogue: {fileID: 11400000, guid: 28421b0e7ea08dc4586a3515268d21e7, type: 2}
+  chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 40
+  playerReputation: 50
   encounterHistory: []
-  loseScenarioText: You were poisioned
+  loseScenarioText: You were poisoned by the elder

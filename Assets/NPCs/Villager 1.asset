@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Villager 1
   m_EditorClassIdentifier: 
   npcName: Villager
-  npcAlignment: 
+  npcAlignment: '- Likes peace
+
+    - Dislikes ruffians'
   spriteAnimation: {fileID: 11400000, guid: d6212a15fc361a24ebfb2a5b905acf6e, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: 6dc04deea25ed5847a8431c924f35f18, type: 2}
@@ -27,6 +29,6 @@ MonoBehaviour:
   playerResponseString: 
   isConsequence: 0
   isLoseEncounter: 0
-  playerReputation: 95
+  playerReputation: 50
   encounterHistory: []
-  loseScenarioText: 
+  loseScenarioText: You have been ended by the villager
