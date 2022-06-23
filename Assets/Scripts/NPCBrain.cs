@@ -54,6 +54,11 @@ public class NPCBrain : ScriptableObject
 
     public void ResetDialogue()
     {
+        foreach (DialogueSystem dialogue in dialoguePool)
+        {
+            dialogue.isCompleted = false;
+        }
+
         dialogueOptions.Clear();
         dialogueOptions.AddRange(dialoguePool);
     }

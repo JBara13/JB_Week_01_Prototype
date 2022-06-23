@@ -13,16 +13,16 @@ public class Encounter : MonoBehaviour
     [SerializeField] private NPCBrain[] queueArray;
     public NPCBrain currentEncounter, consequenceEncounter;
 
-    public int queueLength, turnsRemaining;
+    public int queueLength, turnsRemaining, happyNPCs, happyNPCsToWin;
 
     //public SpriteRenderer npcSpriteRenderer;
     public UIAnimator uiAnimator;
 
     public Image npcNameImage;
 
-    public TextMeshProUGUI npcUIText, npcNameText, turnsRemainingUI, gameOverText, respondingText;
+    public TextMeshProUGUI npcUIText, npcNameText, turnsRemainingUI, gameOverText, respondingText, kingSpeechText;
 
-    public GameObject gameOverPanel, nextButton, playerAnswerPanel;
+    public GameObject gameOverPanel, nextButton, playerAnswerPanel, kingSpeechBubble;
 
     public string playerResponse;
 
@@ -47,6 +47,8 @@ public class Encounter : MonoBehaviour
         displayTurnsRemaining = true;
         gameOverPanel.SetActive(false);
         nextButton.SetActive(false);
+        kingSpeechBubble.SetActive(false);
+
 
         foreach (NPCBrain npc in potentialEncounterList)
         {
@@ -56,15 +58,7 @@ public class Encounter : MonoBehaviour
 
         encounterQueue = new LinkedList<NPCBrain>();
 
-        for (int i = 0; i < queueLength; i++)
-        {
-            if (encounterQueue.Count >= 1f)
-            { 
-                SetNextEncounter();
-            }
-
-            encounterQueue.AddLast(FillEncounterQueue());
-        }
+        FillEncounterQueue();
 
         turnsRemainingDisplayTimerReset = turnsRemainingDisplayTimer;
 
@@ -81,30 +75,32 @@ public class Encounter : MonoBehaviour
     {
         if (!encountering)
         {
-            //responseTimerBar.value = endEncounterTimer;
-
             EncounterNPC();
         }
 
         if (!currentEncounter.isConsequence)
         {
-            //responseTimerBar.maxValue = endEncounterTimerReset;
-
-            //{
-            //    AwaitPlayerResponse();
-            //}
-            //else
             if (encountering && playerHasResponded)
             {
                 reputation.UpdateNPCProfiles();
+
+                happyNPCs = 0;
 
                 foreach (NPCBrain npc in potentialEncounterList)
                 {
                     if (npc.playerReputation <= 0f)
                     {
-                        //encounterQueue.AddFirst(npc);
-
                         npc.isLoseEncounter = true;
+                    }
+
+                    if (npc.playerReputation >= 75f)
+                    {
+                        happyNPCs += 1;
+                    }
+
+                    if (happyNPCs >= happyNPCsToWin)
+                    {
+                        gameWon = true;
                     }
                 }
 
@@ -127,8 +123,17 @@ public class Encounter : MonoBehaviour
         {
             respondingText.text = "Consequence";
 
-            nextButton.SetActive(true);
-            playerAnswerPanel.SetActive(false);
+
+            if (!currentEncounter.chosenDialogue.hasConsequence)
+            {
+                nextButton.SetActive(true);
+                playerAnswerPanel.SetActive(false);
+            }
+            else
+            {
+                nextButton.SetActive(false);
+                playerAnswerPanel.SetActive(true);
+            }
 
             //responseTimerBar.maxValue = consequenceTimerReset;
             //responseTimerBar.value = consequenceTimer;
@@ -141,14 +146,17 @@ public class Encounter : MonoBehaviour
 
         if (displayTurnsRemaining)
         {
+
             turnsRemainingUI.enabled = true;
+
+
             if (turnsRemaining > 1)
             {
-                turnsRemainingUI.text = "Your reign will end in " + turnsRemaining.ToString() + " turns";
+                turnsRemainingUI.text = "Your life will end in " + turnsRemaining.ToString() + " turns";
             }
             else if (turnsRemaining == 1)
             {
-                turnsRemainingUI.text = "Your reign will end after this turn";
+                turnsRemainingUI.text = "You will die of old age after this turn";
             }
             else
             {
@@ -157,6 +165,12 @@ public class Encounter : MonoBehaviour
 
             turnsRemainingDisplayTimer -= Time.deltaTime;
 
+            if (turnsRemainingDisplayTimer >= turnsRemainingDisplayTimerReset - 2f)
+            {
+                turnsRemainingUI.alpha = Mathf.Lerp(0f, 1f, turnsRemainingDisplayTimerReset - turnsRemainingDisplayTimer);
+
+            }
+
             if (turnsRemainingDisplayTimer <= 2f)
             {
                 turnsRemainingUI.alpha = Mathf.Lerp(0f, 1f, turnsRemainingDisplayTimer);
@@ -164,7 +178,7 @@ public class Encounter : MonoBehaviour
 
             if (turnsRemainingDisplayTimer <= 0f)
             {
-                
+
                 displayTurnsRemaining = false;
             }
         }
@@ -191,7 +205,21 @@ public class Encounter : MonoBehaviour
         else npcNameImage.color = neutralColour;
     }
 
-    public NPCBrain FillEncounterQueue()
+    public void FillEncounterQueue()
+    {
+        for (int i = 0; i < queueLength; i++)
+        {
+            if (encounterQueue.Count >= 1f)
+            {
+                SetNextEncounter();
+            }
+
+            encounterQueue.AddLast(AddToEncounterQueue());
+        }
+        Debug.Log("encounter queue filled");
+    }
+
+    public NPCBrain AddToEncounterQueue()
     {
         int r = Random.Range(0, nextEncounterList.Count);
 
@@ -227,23 +255,43 @@ public class Encounter : MonoBehaviour
         }
 
         //currentEncounter = encounterQueue.Peek();
-        if (encounterQueue.First.Value != null)
-        {
-            currentEncounter = encounterQueue.First.Value;
-        }
-        else
-        {
-            for (int i = 0; i < queueLength; i++)
-            {
-                if (encounterQueue.Count >= 1f)
-                {
-                    SetNextEncounter();
-                }
 
-                encounterQueue.AddLast(FillEncounterQueue());
-            }
+        //if (encounterQueue.First.Value != null && encounterQueue.First.Value.dialogueOptions.Count >= 1f)
+        //{
+        //    currentEncounter = encounterQueue.First.Value;
+        //}
+        //if (encounterQueue.First.Value == null || (encounterQueue.Count < 2 && encounterQueue.First.Value.dialogueOptions[0] == null))
+        //{
+
+        //    for (int i = 0; i < queueLength; i++)
+        //    {
+        //        if (encounterQueue.Count >= 1f)
+        //        {
+        //            SetNextEncounter();
+        //        }
+
+        //        encounterQueue.AddLast(FillEncounterQueue());
+        //    }
+
+        //    currentEncounter = encounterQueue.First.Value;
+        //}
+        //else 
+        if (encounterQueue.Count <= 2)
+        {
+            FillEncounterQueue();
+            EncounterNPC();
         }
-        //npcSpriteRenderer.sprite = currentEncounter.npcSprite;
+        
+        if (encounterQueue.First.Value.dialogueOptions.Count <= 0)
+        {
+            encounterQueue.RemoveFirst();
+            EncounterNPC();
+
+        }
+        
+
+        currentEncounter = encounterQueue.First.Value;
+
         uiAnimator.uiAnimation = currentEncounter.spriteAnimation;
         npcNameText.text = currentEncounter.npcName;
 
@@ -265,9 +313,8 @@ public class Encounter : MonoBehaviour
                 Debug.Log(currentEncounter.name + " is out of things to ask, skipping");
 
                 encounterQueue.RemoveFirst();
-                encountering = false;
+                EncounterNPC();
             }
-            npcUIText.text = currentEncounter.chosenDialogue.dialogue;
 
             respondingText.text = "Inquiring";
 
@@ -276,6 +323,10 @@ public class Encounter : MonoBehaviour
         {
             ResetResponse();
             //currentEncounter.chosenDialogue = currentEncounter.consequenceDialogue;
+        }
+
+        if (currentEncounter.chosenDialogue != null)
+        {
             npcUIText.text = currentEncounter.chosenDialogue.dialogue;
         }
 
@@ -314,7 +365,7 @@ public class Encounter : MonoBehaviour
 
     public void YesResponse()
     {
-        if (!playerHasResponded && !currentEncounter.isConsequence)
+        if (!playerHasResponded && currentEncounter.chosenDialogue.hasConsequence)
         {
             playerResponse = "yes";
 
@@ -332,6 +383,9 @@ public class Encounter : MonoBehaviour
                 consequenceEncounter = currentEncounter.chosenDialogue.yesEffectsList[r].npc;
                 consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.yesEffectsList[r].consequenceDialogueList.Count)];
             }
+
+            kingSpeechBubble.SetActive(true);
+            kingSpeechText.text = "I'll allow it";
 
             playerHasResponded = true;
         }
@@ -357,6 +411,9 @@ public class Encounter : MonoBehaviour
                 consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.noEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.noEffectsList[r].consequenceDialogueList.Count)];
                 //consequenceEncounter.isConsequence = true;
             }
+
+            kingSpeechBubble.SetActive(true);
+            kingSpeechText.text = "You are denied";
 
             playerHasResponded = true;
 
@@ -384,6 +441,9 @@ public class Encounter : MonoBehaviour
                 consequenceEncounter.chosenDialogue = currentEncounter.chosenDialogue.idkEffectsList[r].consequenceDialogueList[Random.Range(0, currentEncounter.chosenDialogue.idkEffectsList[r].consequenceDialogueList.Count)];
                 //consequenceEncounter.isConsequence = true;
             }
+
+            kingSpeechBubble.SetActive(true);
+            kingSpeechText.text = "Leave me be!";
 
             playerHasResponded = true;
         }
@@ -420,11 +480,14 @@ public class Encounter : MonoBehaviour
             
             currentEncounter.encounterHistory.Add(currentEncounterHistory);
 
+            currentEncounter.chosenDialogue.isCompleted = true;
+
             foreach (NPCBrain npc in potentialEncounterList)
             {
-                if (npc.dialogueOptions.Contains(currentEncounter.chosenDialogue))
+                for (int i = 0; i < npc.dialogueOptions.Count; i++)
+                if (npc.dialogueOptions[i].isCompleted)
                 {
-                    npc.dialogueOptions.Remove(currentEncounter.chosenDialogue);
+                    npc.dialogueOptions.Remove(npc.dialogueOptions[i]);
 
                 }
             }
@@ -434,20 +497,8 @@ public class Encounter : MonoBehaviour
 
             encounterQueue.RemoveFirst();
 
-            if (encounterQueue.Count <= 0)
-            {
-                for (int i = 0; i < queueLength; i++)
-                {
-                    if (encounterQueue.Count >= 1f)
-                    {
-                        SetNextEncounter();
-                    }
-
-                    encounterQueue.AddLast(FillEncounterQueue());
-                }
-            }
-            //encounterQueue.AddFirst(consequenceEncounter);
             encounterQueue.AddAfter(encounterQueue.First, consequenceEncounter);
+            
 
             //encounterQueue.Dequeue();
         }
@@ -474,28 +525,31 @@ public class Encounter : MonoBehaviour
         nextButton.SetActive(false);
         playerAnswerPanel.SetActive(true);
 
-        if (turnsRemaining <= 0 && !encounterQueue.First.Value.isConsequence)
+        if (gameWon) //turnsRemaining <= 0  && !encounterQueue.First.Value.isConsequence
         {
             //player wins
-            gameWon = true;
+            //gameWon = true;
             gameOverPanel.SetActive(true);
             playerAnswerPanel.SetActive(false);
-            turnsRemainingUI.enabled = false;
-            gameOverText.text = "You lived to the end of your reign! A worthy King!";
+            //turnsRemainingUI.enabled = false;
+            gameOverText.text = "You have built a strong legacy! LONG LIVE THE KING!";
 
             //run win game stuff
         }
-        else
+
+        if (turnsRemaining <= 0)
         {
-            turnsRemainingUI.text = "Your reign will end in " + turnsRemaining.ToString() + " turns";
+            LoseGame();
+            gameOverText.text = "You have died of old age, you will quickly be forgotten.";
         }
 
         //if (gameOver)
         //{
         //    LoseGame();
         //}
-
+        turnsRemainingUI.alpha = 0f;
         displayTurnsRemaining = true;
+        kingSpeechBubble.SetActive(false);
         encountering = false;
         
 
@@ -509,4 +563,6 @@ public class Encounter : MonoBehaviour
         playerAnswerPanel.SetActive(false);
         turnsRemainingUI.enabled = false;
     }
+
+
 }
