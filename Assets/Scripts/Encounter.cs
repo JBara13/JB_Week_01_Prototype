@@ -152,7 +152,7 @@ public class Encounter : MonoBehaviour
 
             if (turnsRemaining > 1)
             {
-                turnsRemainingUI.text = "Your life will end in " + turnsRemaining.ToString() + " turns";
+                turnsRemainingUI.text = "Your life will end" + "\n" + "in " + turnsRemaining.ToString() + " turns";
             }
             else if (turnsRemaining == 1)
             {
