@@ -20,7 +20,7 @@ public class Encounter : MonoBehaviour
 
     public Image npcNameImage;
 
-    public TextMeshProUGUI npcUIText, npcNameText, turnsRemainingUI, gameOverText, respondingText, kingSpeechText;
+    public TextMeshProUGUI npcUIText, npcNameText, turnsRemainingUI, gameOverText, respondingText, kingSpeechText, happyNPCsText;
 
     public GameObject gameOverPanel, nextButton, playerAnswerPanel, kingSpeechBubble, npcSpeechBubble;
 
@@ -62,6 +62,8 @@ public class Encounter : MonoBehaviour
         FillEncounterQueue();
 
         turnsRemainingDisplayTimerReset = turnsRemainingDisplayTimer;
+        happyNPCsText.text = happyNPCs + " Civilians will spread your legacy";
+
 
         encountering = false;
 
@@ -137,6 +139,8 @@ public class Encounter : MonoBehaviour
                             gameWon = true;
                         }
                     }
+
+                    happyNPCsText.text = happyNPCs + " Civilians will spread your legacy";
 
                     respondingText.text = "Responding";
 
@@ -219,7 +223,7 @@ public class Encounter : MonoBehaviour
         }
 
 
-        if (gameOver)
+        if (gameOver && npcSpeechBubble.activeSelf)
         {
             LoseGame();
         }
