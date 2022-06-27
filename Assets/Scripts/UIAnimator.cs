@@ -12,9 +12,9 @@ public class UIAnimator : MonoBehaviour
     public SpriteRenderer uiDisplay;
 
     public int count;
-    void Start()
+    void Awake()
     {
-        timePerFrame = uiAnimation.timePerFrameReset;
+        //timePerFrame = uiAnimation.timePerFrameReset;
     }
 
     private void Update()

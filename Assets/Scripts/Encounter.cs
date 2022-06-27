@@ -27,7 +27,7 @@ public class Encounter : MonoBehaviour
     public string playerResponse;
 
     public bool encountering, playerHasResponded, displayTurnsRemaining;
-    public bool gameOver, gameWon;
+    public bool gameOver, gameWon, textActivated;
 
     public float turnsRemainingDisplayTimer, turnsRemainingColourMix;
     private float turnsRemainingDisplayTimerReset;
@@ -35,6 +35,8 @@ public class Encounter : MonoBehaviour
     private ReputationMenu reputation;
 
     public Color happyColour, upsetColour, neutralColour, startTurnsColour;
+
+    ScrollingText scrollingText;
 
     void Start()
     {
@@ -48,6 +50,8 @@ public class Encounter : MonoBehaviour
         gameOverPanel.SetActive(false);
         nextButton.SetActive(false);
         kingSpeechBubble.SetActive(false);
+
+        scrollingText = GetComponent<ScrollingText>();
 
         turnsAmount = turnsRemaining;
 
@@ -64,7 +68,7 @@ public class Encounter : MonoBehaviour
         turnsRemainingDisplayTimerReset = turnsRemainingDisplayTimer;
         happyNPCsText.text = happyNPCs + " Civilians will spread your legacy";
 
-
+        textActivated = false;
         encountering = false;
 
         ResetResponse();
@@ -88,15 +92,26 @@ public class Encounter : MonoBehaviour
                 npcSpeechBubble.SetActive(false);
                 uiAnimator.uiDisplay.enabled = false;
                 playerAnswerPanel.SetActive(false);
+                textActivated = false;
+                //scrollingText.DeactivateText();
+
             }
             else if (turnsRemainingDisplayTimer <= turnsRemainingDisplayTimerReset / 3)
             {
                 uiAnimator.uiDisplay.enabled = true;
             }
 
-            if (turnsRemainingDisplayTimer <= 0f || turnsRemainingDisplayTimer == turnsRemainingDisplayTimerReset)
+            if (turnsRemainingDisplayTimer == turnsRemainingDisplayTimerReset)
             {
+                if (!textActivated)
+                {
+                    //scrollingText.SetText(0);
+                    scrollingText.ActivateText();
+                    textActivated = true;
+                }
+
                 npcSpeechBubble.SetActive(true);
+
             }
 
             if (!currentEncounter.isConsequence)
@@ -327,7 +342,11 @@ public class Encounter : MonoBehaviour
 
         if (currentEncounter.chosenDialogue != null)
         {
-            npcUIText.text = currentEncounter.chosenDialogue.dialogue;
+            //npcUIText.text = currentEncounter.chosenDialogue.dialogue;
+            scrollingText.FillStringArray();
+            //scrollingText.DeactivateText();
+            scrollingText.SetText(0);
+
         }
 
         encountering = true;
@@ -340,8 +359,17 @@ public class Encounter : MonoBehaviour
         {
             playerResponse = "yes";
 
-            npcUIText.text = currentEncounter.chosenDialogue.yesResponse;
+            //npcUIText.text = currentEncounter.chosenDialogue.yesResponse;
+            //scrollingText.DeactivateText();
+            textActivated = false;
 
+            scrollingText.SetText(1);
+
+            if (!textActivated)
+            {
+                scrollingText.ActivateText();
+                textActivated = true;
+            }
 
             foreach (DecisionEffect effect in currentEncounter.chosenDialogue.yesEffectsList)
             {
@@ -368,7 +396,17 @@ public class Encounter : MonoBehaviour
         { 
             playerResponse = "no";
 
-            npcUIText.text = currentEncounter.chosenDialogue.noResponse;
+            //npcUIText.text = currentEncounter.chosenDialogue.noResponse;
+            //scrollingText.DeactivateText();
+            textActivated = false;
+
+            scrollingText.SetText(2);
+
+            if (!textActivated)
+            {
+                scrollingText.ActivateText();
+                textActivated = true;
+            }
 
             foreach (DecisionEffect effect in currentEncounter.chosenDialogue.noEffectsList)
             {
@@ -397,7 +435,17 @@ public class Encounter : MonoBehaviour
         {
             playerResponse = "idk";
 
-            npcUIText.text = currentEncounter.chosenDialogue.idkResponse;
+            //npcUIText.text = currentEncounter.chosenDialogue.idkResponse;
+            //scrollingText.DeactivateText();
+            textActivated = false;
+
+            scrollingText.SetText(3);
+
+            if (!textActivated)
+            {
+                scrollingText.ActivateText();
+                textActivated = true;
+            }
 
 
             foreach (DecisionEffect effect in currentEncounter.chosenDialogue.idkEffectsList)
@@ -521,6 +569,9 @@ public class Encounter : MonoBehaviour
         turnsRemainingUI.alpha = 0f;
         displayTurnsRemaining = true;
         kingSpeechBubble.SetActive(false);
+        textActivated = false;
+        
+        //scrollingText.SetText(0);
         encountering = false;
         
 
