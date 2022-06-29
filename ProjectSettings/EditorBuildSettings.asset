@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minor Reign.unity
     guid: e8d3a310d97cc5f4b9881f9fe38c5325
+  - enabled: 1
+    path: Assets/Scenes/TUTORIAL.unity
+    guid: fea41351177d86a4db36ed5675c405b0
   m_configObjects: {}
