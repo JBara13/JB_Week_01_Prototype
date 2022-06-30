@@ -36,6 +36,9 @@ public class Encounter : MonoBehaviour
 
     public Color happyColour, upsetColour, neutralColour, startTurnsColour;
 
+    public AudioSource winSoundEffect;
+    public AudioSource loseSoundEffect;
+
     ScrollingText scrollingText;
 
     void Start()
@@ -575,6 +578,7 @@ public class Encounter : MonoBehaviour
 
     public void WinGame()
     {
+        winSoundEffect.Play();
         gameOverPanel.SetActive(true);
         playerAnswerPanel.SetActive(false);
         gameOverText.text = "You have built a strong legacy! LONG LIVE THE KING!";
@@ -596,6 +600,8 @@ public class Encounter : MonoBehaviour
         //enable lose panel
         gameOverPanel.SetActive(true);
         playerAnswerPanel.SetActive(false);
+
+        loseSoundEffect.Play();
 
         currentEncounter = null;
         npcSpeechBubble.SetActive(false);
