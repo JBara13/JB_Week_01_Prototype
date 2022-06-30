@@ -23,7 +23,7 @@ MonoBehaviour:
   dialoguePool:
   - {fileID: 11400000, guid: 6dc04deea25ed5847a8431c924f35f18, type: 2}
   - {fileID: 11400000, guid: 3f94262ddd740ed47b6ac14402a4e83d, type: 2}
-  chosenDialogue: {fileID: 11400000, guid: 6dc04deea25ed5847a8431c924f35f18, type: 2}
+  chosenDialogue: {fileID: 0}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 

@@ -19,12 +19,12 @@ MonoBehaviour:
   spriteAnimation: {fileID: 11400000, guid: 8911cc7fb42e4fc48990bcee6a8f5a3f, type: 2}
   dialogueOptions: []
   dialoguePool: []
-  chosenDialogue: {fileID: 0}
+  chosenDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: e6a5d1184910a3541aea2dcc91f0f76b, type: 2}
   playerResponseString: 
   isConsequence: 0
-  isLoseEncounter: 0
-  playerReputation: 50
+  isLoseEncounter: 1
+  playerReputation: 0
   encounterHistory: []
-  loseScenarioText: You were been bludgeoned by the blacksmith
+  loseScenarioText: You were bludgeoned by the blacksmith

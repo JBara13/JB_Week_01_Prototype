@@ -243,9 +243,9 @@ MonoBehaviour:
   currentEncounter: {fileID: 0}
   consequenceEncounter: {fileID: 0}
   queueLength: 10
-  turnsRemaining: 5
+  turnsRemaining: 10
   happyNPCs: 0
-  happyNPCsToWin: 6
+  happyNPCsToWin: 1
   turnsAmount: 0
   uiAnimator: {fileID: 1763875988}
   npcNameImage: {fileID: 1195757326}
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf69e7f86ec73bf43a5bcf4fb3dcb3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 0.025
+  textSpeed: 0.015
   itemInfo: []
 --- !u!1 &197750047
 GameObject:

@@ -877,6 +877,178 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419042074}
   m_CullTransparentMesh: 1
+--- !u!1 &498755174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498755181}
+  - component: {fileID: 498755180}
+  - component: {fileID: 498755179}
+  - component: {fileID: 498755178}
+  - component: {fileID: 498755177}
+  - component: {fileID: 498755176}
+  - component: {fileID: 498755175}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &498755175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498755174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf69e7f86ec73bf43a5bcf4fb3dcb3e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.02
+  itemInfo: []
+--- !u!114 &498755176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498755174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66166da1f327504a85fa0dcbf6ef8c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &498755177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498755174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd4d50de859b1547860011fbfb74202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reputationMenu: {fileID: 1834614541}
+  npcProfile: {fileID: 5142327454467381139, guid: c17ae96553ddd3149b51e6fa496bb5a5, type: 3}
+  npcReputations: []
+  npcReputationImages: []
+  handleSprites: []
+  happinessbarFills: []
+  happyHandle: {fileID: 21300000, guid: a3c4ebe34af547c49b52e413f99149d1, type: 3}
+  neutralHandle: {fileID: 21300000, guid: 43a5b196ace1de447a448325f7a1d378, type: 3}
+  upsetHandle: {fileID: 21300000, guid: 1b9975767db72db45891f9cfebadc520, type: 3}
+--- !u!114 &498755178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498755174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6bc7bd9702cb245975cdd416fab7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potentialEncounterList:
+  - {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+  - {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+  - {fileID: 11400000, guid: 1b1270dfb01094a4f9a43501749d0e0c, type: 2}
+  - {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
+  - {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+  - {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+  - {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+  - {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
+  - {fileID: 11400000, guid: 5ee288e14554f7a4eb10662107dd4ca0, type: 2}
+  - {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
+  - {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+  - {fileID: 11400000, guid: 7003c44c33c51cc45824db9c8aaad436, type: 2}
+  nextEncounterList: []
+  queueArray: []
+  currentEncounter: {fileID: 0}
+  consequenceEncounter: {fileID: 0}
+  queueLength: 10
+  turnsRemaining: 5
+  happyNPCs: 0
+  happyNPCsToWin: 6
+  turnsAmount: 0
+  uiAnimator: {fileID: 0}
+  npcNameImage: {fileID: 0}
+  npcUIText: {fileID: 0}
+  npcNameText: {fileID: 0}
+  turnsRemainingUI: {fileID: 0}
+  gameOverText: {fileID: 0}
+  respondingText: {fileID: 0}
+  kingSpeechText: {fileID: 0}
+  happyNPCsText: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  nextButton: {fileID: 0}
+  playerAnswerPanel: {fileID: 0}
+  kingSpeechBubble: {fileID: 0}
+  npcSpeechBubble: {fileID: 0}
+  playerResponse: 
+  encountering: 0
+  playerHasResponded: 0
+  displayTurnsRemaining: 0
+  gameOver: 0
+  gameWon: 0
+  textActivated: 0
+  turnsRemainingDisplayTimer: 3
+  turnsRemainingColourMix: 0
+  happyColour: {r: 0.18258372, g: 0.72, b: 0.28937805, a: 1}
+  upsetColour: {r: 0.72, g: 0.18258372, b: 0.18258372, a: 1}
+  neutralColour: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  startTurnsColour: {r: 0.7830189, g: 0.78200096, b: 0, a: 1}
+--- !u!114 &498755179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498755174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28349db31325c3442b540db78b9db023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happinessMeter: {fileID: 0}
+  button: {fileID: 0}
+--- !u!114 &498755180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498755174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801b8e485a5ce144cbaa323368fdfdf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 0}
+--- !u!4 &498755181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498755174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 733.23236, y: 356.19995, z: -1.0861557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &538728143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1722,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 0
+--- !u!114 &1110348505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110348497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6bc7bd9702cb245975cdd416fab7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potentialEncounterList:
+  - {fileID: 11400000, guid: 0b60a0745938aa44fa5a8a62bd61fa67, type: 2}
+  - {fileID: 11400000, guid: f1987a824f327d94e8d15dcb7198820b, type: 2}
+  - {fileID: 11400000, guid: 5ee288e14554f7a4eb10662107dd4ca0, type: 2}
+  - {fileID: 11400000, guid: 164a74c89c7a8b54296ac0a0a385288f, type: 2}
+  - {fileID: 11400000, guid: 69946c98f623db14080eb0da648f00a6, type: 2}
+  - {fileID: 11400000, guid: 7003c44c33c51cc45824db9c8aaad436, type: 2}
+  - {fileID: 11400000, guid: 2fc1503c601f1be4e87f1e5f9a133e46, type: 2}
+  - {fileID: 11400000, guid: 1b1270dfb01094a4f9a43501749d0e0c, type: 2}
+  - {fileID: 11400000, guid: 7bc1ea3c5c124d94abb5715e90cca60c, type: 2}
+  - {fileID: 11400000, guid: 01dc08a8bd4173843b7b802751c3031f, type: 2}
+  - {fileID: 11400000, guid: 7c1d8dad0f750294baf4eba09c7ef9e0, type: 2}
+  - {fileID: 11400000, guid: 3047ea1bb69db9a4db2d8431dbd873a6, type: 2}
+  nextEncounterList: []
+  queueArray: []
+  currentEncounter: {fileID: 0}
+  consequenceEncounter: {fileID: 0}
+  queueLength: 0
+  turnsRemaining: 0
+  happyNPCs: 0
+  happyNPCsToWin: 0
+  turnsAmount: 0
+  uiAnimator: {fileID: 0}
+  npcNameImage: {fileID: 0}
+  npcUIText: {fileID: 0}
+  npcNameText: {fileID: 0}
+  turnsRemainingUI: {fileID: 0}
+  gameOverText: {fileID: 0}
+  respondingText: {fileID: 0}
+  kingSpeechText: {fileID: 0}
+  happyNPCsText: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  nextButton: {fileID: 0}
+  playerAnswerPanel: {fileID: 0}
+  kingSpeechBubble: {fileID: 0}
+  npcSpeechBubble: {fileID: 0}
+  playerResponse: 
+  encountering: 0
+  playerHasResponded: 0
+  displayTurnsRemaining: 0
+  gameOver: 0
+  gameWon: 0
+  textActivated: 0
+  turnsRemainingDisplayTimer: 0
+  turnsRemainingColourMix: 0
+  happyColour: {r: 0, g: 0, b: 0, a: 0}
+  upsetColour: {r: 0, g: 0, b: 0, a: 0}
+  neutralColour: {r: 0, g: 0, b: 0, a: 0}
+  startTurnsColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!224 &1110569808 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3781355751651442982, guid: 56529fcee15e4624ea3c60938f501015, type: 3}
@@ -1807,6 +2040,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446558384}
   m_CullTransparentMesh: 1
+--- !u!1 &1834614541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2115408601452418546, guid: 030fe8a553eebb1419b8824fb5c508c6, type: 3}
+  m_PrefabInstance: {fileID: 1065503541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1899123532 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8063262362155799499, guid: d970abd30789f0045b03f939e7de61be, type: 3}

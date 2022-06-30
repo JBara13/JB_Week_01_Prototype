@@ -23,7 +23,7 @@ MonoBehaviour:
   dialoguePool:
   - {fileID: 11400000, guid: 3831836d50ad44c498bc162c741c5532, type: 2}
   - {fileID: 11400000, guid: 3c156bb786c3abd499a76db0ae08be1a, type: 2}
-  chosenDialogue: {fileID: 0}
+  chosenDialogue: {fileID: 11400000, guid: 3831836d50ad44c498bc162c741c5532, type: 2}
   consequenceDialogue: {fileID: 0}
   loseDialogue: {fileID: 11400000, guid: d7eb9d4986d18e44bb84eee777c36d1f, type: 2}
   playerResponseString: 
@@ -31,4 +31,4 @@ MonoBehaviour:
   isLoseEncounter: 0
   playerReputation: 50
   encounterHistory: []
-  loseScenarioText: You got zapped!
+  loseScenarioText: You got zapped by the witch

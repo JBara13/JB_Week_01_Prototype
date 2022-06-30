@@ -80,12 +80,12 @@ public class Encounter : MonoBehaviour
 
     void Update()
     {
-        if (!encountering)
+        if (!encountering && !gameOver && !gameWon)
         {
             EncounterNPC();
         }
 
-        if (encountering)
+        if (encountering && !gameOver && !gameWon)
         {
             if ((turnsRemainingDisplayTimer >= turnsRemainingDisplayTimerReset / 2 && turnsRemainingDisplayTimer < turnsRemainingDisplayTimerReset))
             {
@@ -198,7 +198,8 @@ public class Encounter : MonoBehaviour
                 }
                 else
                 {
-                    turnsRemainingUI.text = "Congratulations!";
+                    turnsRemainingUI.text = "You have died of natural causes";
+                    gameOver = true;
                 }
             }
             else
@@ -290,7 +291,7 @@ public class Encounter : MonoBehaviour
             {
                 npc.chosenDialogue = npc.loseDialogue;
                 encounterQueue.AddFirst(npc);
-                gameOverText.text = npc.loseScenarioText;
+                gameOverText.text = npc.loseScenarioText + "\n" + "Game Over!";
                 gameOver = true;
             }
         }
@@ -546,20 +547,14 @@ public class Encounter : MonoBehaviour
 
         if (gameWon) //turnsRemaining <= 0  && !encounterQueue.First.Value.isConsequence
         {
-            //player wins
-            //gameWon = true;
-            gameOverPanel.SetActive(true);
-            playerAnswerPanel.SetActive(false);
-            //turnsRemainingUI.enabled = false;
-            gameOverText.text = "You have built a strong legacy! LONG LIVE THE KING!";
-
-            //run win game stuff
+            WinGame();
         }
 
         if (turnsRemaining <= 0)
         {
-            LoseGame();
             gameOverText.text = "You have died of old age, you will quickly be forgotten.";
+
+            LoseGame();
         }
 
         //if (gameOver)
@@ -578,12 +573,39 @@ public class Encounter : MonoBehaviour
         //NPC Leaves
     }
 
+    public void WinGame()
+    {
+        gameOverPanel.SetActive(true);
+        playerAnswerPanel.SetActive(false);
+        gameOverText.text = "You have built a strong legacy! LONG LIVE THE KING!";
+        displayTurnsRemaining = false;
+        currentEncounter = null;
+        npcSpeechBubble.SetActive(false);
+        uiAnimator.gameObject.SetActive(false);
+
+        displayTurnsRemaining = false;
+
+        for (int i = 0; i < encounterQueue.Count; i++)
+        {
+            encounterQueue.RemoveFirst();
+        }
+    }
+
     public void LoseGame()
     {
         //enable lose panel
         gameOverPanel.SetActive(true);
         playerAnswerPanel.SetActive(false);
-        turnsRemainingUI.enabled = false;
+
+        currentEncounter = null;
+        npcSpeechBubble.SetActive(false);
+        uiAnimator.gameObject.SetActive(false);
+        displayTurnsRemaining = false;
+
+        for (int i = 0; i < encounterQueue.Count; i++)
+        {
+            encounterQueue.RemoveFirst();
+        }
     }
 
 
