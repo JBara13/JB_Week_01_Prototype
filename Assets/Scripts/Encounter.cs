@@ -6,6 +6,13 @@ using TMPro;
 
 public class Encounter : MonoBehaviour
 {
+    public delegate void PlayerAnswerAction();
+    public static event PlayerAnswerAction OnYesAnswer, OnNoAnswer, OnIDKAnswer;
+
+    public delegate void TrackConsequenceAction();
+    public static event TrackConsequenceAction OnPrompt, OnConsequence;
+
+
     public List<NPCBrain> potentialEncounterList;
     public List<NPCBrain> nextEncounterList;
     public LinkedList<NPCBrain> encounterQueue;
@@ -119,6 +126,8 @@ public class Encounter : MonoBehaviour
 
             if (!currentEncounter.isConsequence)
             {
+                
+
                 if (turnsRemainingDisplayTimer <= 0f || turnsRemainingDisplayTimer == turnsRemainingDisplayTimerReset)
                 {
                     playerAnswerPanel.SetActive(true);
@@ -126,6 +135,8 @@ public class Encounter : MonoBehaviour
 
                 if (playerHasResponded)
                 {
+                    
+
                     reputation.UpdateNPCProfiles();
 
                     if (currentEncounter.playerReputation >= 51f)
@@ -334,12 +345,22 @@ public class Encounter : MonoBehaviour
                 EncounterNPC();
             }
 
+            if (OnPrompt != null)
+            {
+                OnPrompt();
+            }
+
             respondingText.text = "Inquiring";
 
             //playerAnswerPanel.SetActive(true);
         }
         else
         {
+            if (OnConsequence != null)
+            {
+                OnConsequence();
+            }
+
             ResetResponse();
             //currentEncounter.chosenDialogue = currentEncounter.consequenceDialogue;
         }
@@ -390,6 +411,11 @@ public class Encounter : MonoBehaviour
             kingSpeechBubble.SetActive(true);
             kingSpeechText.text = "I'll allow it";
 
+             if (OnYesAnswer != null)
+            {
+                OnYesAnswer();
+            }
+
             playerHasResponded = true;
         }
     }
@@ -427,6 +453,11 @@ public class Encounter : MonoBehaviour
 
             kingSpeechBubble.SetActive(true);
             kingSpeechText.text = "You are denied";
+
+            if (OnNoAnswer != null)
+            {
+                OnNoAnswer();
+            }
 
             playerHasResponded = true;
 
@@ -467,6 +498,11 @@ public class Encounter : MonoBehaviour
 
             kingSpeechBubble.SetActive(true);
             kingSpeechText.text = "Leave me be!";
+
+            if (OnIDKAnswer != null)
+            {
+                OnIDKAnswer();
+            }
 
             playerHasResponded = true;
         }
